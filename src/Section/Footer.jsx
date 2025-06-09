@@ -18,7 +18,8 @@ const Footer = () => {
           data: `Address C/O Dorjee Wangmu 
 Khrimu, post office-kitpi, Tawang, Tawang, 
 Tawang, Arunachal Pradesh, india 
-Pin 790104.`, icon: MapPin
+Pin 790104.`,
+          icon: MapPin,
         },
         { data: "contact@example.com", icon: MailIcon },
         { data: "+1 (123) 456-7890", icon: Phone },
@@ -27,9 +28,12 @@ Pin 790104.`, icon: MapPin
     {
       sectionTitle: "Services",
       list: [
-        { data: "Web Design", link: "/services/web-design" },
-        { data: "Development", link: "/services/development" },
-        { data: "Marketing", link: "/services/marketing" },
+        { data: "Construction", link: "/services/construction" },
+        { data: "Steel Furniture", link: "/services/steel-furniture" },
+        { data: "Steel Fabrication", link: "/services/steel-fabrication" },
+        { data: "Electrical Goods", link: "/services/electrical-goods" },
+        { data: "Building Hardware", link: "/services/building-hardware" },
+
       ],
     },
     {
@@ -83,10 +87,10 @@ Pin 790104.`, icon: MapPin
                   {item.link ? (
                     <Link
                       to={item.link}
-                      className="relative text-gray-600 hover:text-black group font-light  w-fit wrap-break-word"
+                      className="relative text-gray-600 hover:text-[#FF1616] group font-light  w-fit wrap-break-word"
                     >
                       <span>{item.data}</span>
-                      <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                      <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                     </Link>
                   ) : (
                     <span className="font-light">{item.data}</span>
@@ -120,28 +124,28 @@ Pin 790104.`, icon: MapPin
         <div className="md:col-span-1 flex items-center">
           <Link
             to="/privacy-policy"
-            className="relative group text-sm text-gray-500 hover:text-black w-fit"
+            className="relative group text-sm text-gray-500 hover:text-[#FF1616] w-fit"
           >
             <span>Privacy Policy</span>
-            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
         </div>
         <div className="md:col-span-1 flex items-center">
           <Link
             to="/refund-policy"
-            className="relative group text-sm text-gray-500 hover:text-black w-fit"
+            className="relative group text-sm text-gray-500 hover:text-[#FF1616] w-fit"
           >
             <span>Refund Policy</span>
-            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
         </div>
         <div className="md:col-span-1 flex items-center">
           <Link
             to="/terms"
-            className="relative group text-sm text-gray-500 hover:text-black w-fit"
+            className="relative group text-sm text-gray-500 hover:text-[#FF1616] w-fit"
           >
             <span>Terms of Service</span>
-            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
         </div>
       </div>
