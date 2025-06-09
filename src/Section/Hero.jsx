@@ -1,6 +1,6 @@
 import BgImage from "../assets/demo.webp";
 
-const Section = ({ title, heading }) => {
+const Section = ({ title, heading,heading2 }) => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-stretch w-full min-h-fit">
       {/* Left Section (Hero Content) */}
@@ -18,11 +18,9 @@ const Section = ({ title, heading }) => {
             </h1>
           </div>
 
-          <p className="text-lg font-light text-gray-200 px-2 max-w-3xl leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis
-            egestas pellentesque libero dolor in diam consequat ut. Mi nibh amet
-            viverra id aliquet neque odio.
-          </p>
+          <h2 className="text-lg font-light text-gray-200 px-2 max-w-3xl leading-relaxed">
+           {heading2}
+          </h2>
 
           <button className="red-white-button">
             View our work

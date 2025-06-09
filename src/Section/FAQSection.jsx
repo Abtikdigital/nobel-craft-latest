@@ -31,29 +31,29 @@ const FAQSection = () => {
 
   const faqData = [
     {
-      question: "Donec rutrum congue leo eget malesuada?",
+      question: "1. What types of construction projects do you handle?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut quam sed mauris proin feugiat.",
+        "We specialize in residential, commercial, and industrial construction projects—from small renovations to large-scale developments.",
     },
     {
-      question: "Vivamus suscipit tortor eget felis porttitor volutpat?",
+      question: "2. Do you offer custom steel or iron furniture?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut quam sed mauris proin feugiat.",
+        "Yes. We specialize in custom-designed steel and iron furniture for homes, offices, and industrial spaces — built for durability, functionality, and aesthetics.",
     },
     {
-      question: "Curabitur non nulla sit amet nisl tempus?",
+      question: "3. What is your typical project timeline?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut quam sed mauris proin feugiat.",
+        "Project timelines vary depending on size and complexity. We provide clear timelines after consultation and stick to agreed schedules to ensure on-time delivery.",
     },
     {
-      question: "Pellentesque in ipsum id orci porta dapibus?",
+      question: "4. Do you provide electrical goods and building materials too?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut quam sed mauris proin feugiat.",
+        "Yes, we supply certified electrical components and high-quality building materials. Our all-in-one service ensures you get everything you need from one trusted source.",
     },
     {
-      question: "Curabitur non nulla sit amet nisl?",
+      question: "5. How can I request a quote or consultation?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien, dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut quam sed mauris proin feugiat.",
+        "You can contact us through our website's inquiry form, email, or phone. We’ll schedule a consultation and provide a detailed quote based on your needs.",
     },
   ];
 
@@ -72,9 +72,7 @@ const FAQSection = () => {
         </h2>
         <div className="w-14 h-2 bg-red-500 mb-6"></div>
         <p className="sub-description text-black">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
-          dignissim tristique tellus sed faucibus nullam. Tincidunt mauris ut
-          quam sed mauris proin feugiat.
+         Whether you’re planning a new build, custom furniture, or need reliable hardware and electrical goods — NobleCraft is ready to bring your vision to life with quality and expertise.
         </p>
         <button
           className="white-red-button"

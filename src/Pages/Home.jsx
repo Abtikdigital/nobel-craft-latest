@@ -19,31 +19,32 @@ const Home = () => {
       <Navbar />
       <FadeInSection>
         <Hero
-          title="Construction"
+          title="Building the Future, One Brick at a Time"
+          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
           heading={[
             {
               heading: "Construction",
-              description: `Expert construction solutions for residential and commercial needs. Reliable, efficient, and built to last.`,
+              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
               img: Image1,
             },
             {
               heading: "Steel Furniture",
-              description: `Custom steel furniture built with strength and style. Ideal for homes, offices, and industrial spaces.`,
+              description: `Stylish, long-lasting steel furniture for residential and commercial use.`,
               img: Image2,
             },
             {
               heading: "Steel Fabrication",
-              description: `Precision metal works for all structural and custom needs. Tailored to your project specifications.`,
+              description: `Custom metalwork for frames, gates, and railings—built with precision to match your needs.`,
               img: Image3,
             },
             {
               heading: "Electrical Goods",
-              description: `Top-quality electrical products and components. Safe, certified, and built for performance.`,
+              description: `Certified, high-performance electrical items trusted by industry pros.`,
               img: Image3,
             },
             {
               heading: "Building Hardware",
-              description: `Durable hardware for construction and repairs. Everything you need under one roof.`,
+              description: `Durable hardware essentials for any construction or renovation project.`,
               img: Image3,
             }
 
@@ -81,9 +82,9 @@ const Home = () => {
         <Servicesection />
       </FadeInSection>
 
-<FadeInSection>
-  <LatestProject/>
-</FadeInSection>
+      <FadeInSection>
+        <LatestProject />
+      </FadeInSection>
 
       <FadeInSection>
         <section className="grid grid-cols-1 md:grid-cols-2">
