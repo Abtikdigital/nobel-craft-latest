@@ -1,4 +1,4 @@
-import Counter from "../pages/Counter";
+import Counter from "../Pages/Counter";
 import ServiceImage from "../assets/navbar/image.png";
 
 const ServicesSection = () => {
