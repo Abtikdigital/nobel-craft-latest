@@ -1,11 +1,11 @@
-import Navbar from "../section/Navbar.jsx";
+import Navbar from "../Section/Navbar";
 import AboutImage from "../assets/serviceimg.png";
 
 import Servicesection from "../Section/Servicesection";
-import FAQSection from "../section/FAQSection";
-import TestimonialsSection from "../section/TestimonialsSection";
-import Contact from "../section/Contact";
-import Footer from "../section/Footer";
+import FAQSection from "../Section/FAQSection";
+import TestimonialsSection from "../Section/TestimonialsSection";
+import Contact from "../Section/Contact";
+import Footer from "../Section/Footer";
 import Hero from "../Section/Hero";
 import Image1 from "../assets/Hero/Image1.png";
 import Image2 from "../assets/Hero/Image2.png";
