@@ -3,7 +3,7 @@ import ServiceImage from "../assets/navbar/image.png";
 
 const ServicesSection = () => {
   return (
-<section className="w-full box-border py-10 px-5 md:px-10 bg-white">
+    <section className="w-full box-border py-10 px-5 md:px-10 bg-white">
       <div className="flex flex-col md:flex-row gap-7.5">
         <div className="flex-1 min-w-[280px]">
           <img
