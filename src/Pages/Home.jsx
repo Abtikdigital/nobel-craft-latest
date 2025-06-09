@@ -1,4 +1,4 @@
-import Navbar from "../section/Navbar";
+import Navbar from "../section/Navbar.jsx";
 import AboutImage from "../assets/serviceimg.png";
 
 import Servicesection from "../Section/Servicesection";
