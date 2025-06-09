@@ -11,6 +11,7 @@ import Image1 from "../assets/Hero/Image1.png";
 import Image2 from "../assets/Hero/Image2.png";
 import Image3 from "../assets/Hero/Image3.png";
 import FadeInSection from "../utils/FadeIn";
+import LatestProject from "../Section/LatestProject";
 
 const Home = () => {
   return (
@@ -22,19 +23,30 @@ const Home = () => {
           heading={[
             {
               heading: "Construction",
-              description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. Mi nibh amet viverra id aliquet neque odio`,
+              description: `Expert construction solutions for residential and commercial needs. Reliable, efficient, and built to last.`,
               img: Image1,
             },
             {
-              heading: "Foundation Work",
-              description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. Mi nibh amet viverra id aliquet neque odio`,
+              heading: "Steel Furniture",
+              description: `Custom steel furniture built with strength and style. Ideal for homes, offices, and industrial spaces.`,
               img: Image2,
             },
             {
-              heading: "Site Management",
-              description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis egestas pellentesque libero dolor in diam consequat ut. Mi nibh amet viverra id aliquet neque odio`,
+              heading: "Steel Fabrication",
+              description: `Precision metal works for all structural and custom needs. Tailored to your project specifications.`,
               img: Image3,
             },
+            {
+              heading: "Electrical Goods",
+              description: `Top-quality electrical products and components. Safe, certified, and built for performance.`,
+              img: Image3,
+            },
+            {
+              heading: "Building Hardware",
+              description: `Durable hardware for construction and repairs. Everything you need under one roof.`,
+              img: Image3,
+            }
+
           ]}
         />
       </FadeInSection>
@@ -68,6 +80,11 @@ const Home = () => {
       <FadeInSection>
         <Servicesection />
       </FadeInSection>
+
+<FadeInSection>
+  <LatestProject/>
+</FadeInSection>
+
       <FadeInSection>
         <section className="grid grid-cols-1 md:grid-cols-2">
           <div className="bg-[#2A2A2A] p-6 flex flex-col gap-6 justify-center">

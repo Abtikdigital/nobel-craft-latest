@@ -1,12 +1,15 @@
 import React from "react";
 
-const LatestProject=()=>{
+const LatestProject = () => {
 
 
-    return(<div>
-        
-    
-    
+    return (<div>
+        <section>
+            <h2 className="sub-heading text-[#">Latest Project</h2>
+        </section>
+
+
+
     </div>)
 }
 

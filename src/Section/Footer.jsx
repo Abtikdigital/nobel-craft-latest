@@ -14,7 +14,12 @@ const Footer = () => {
     {
       sectionTitle: "Contact",
       list: [
-        { data: "1234 Main Street, City, Country", icon: MapPin },
+        {
+          data: `Address C/O Dorjee Wangmu 
+Khrimu, post office-kitpi, Tawang, Tawang, 
+Tawang, Arunachal Pradesh, india 
+Pin 790104.`, icon: MapPin
+        },
         { data: "contact@example.com", icon: MailIcon },
         { data: "+1 (123) 456-7890", icon: Phone },
       ],
@@ -78,7 +83,7 @@ const Footer = () => {
                   {item.link ? (
                     <Link
                       to={item.link}
-                      className="relative text-gray-600 hover:text-black group font-light w-fit"
+                      className="relative text-gray-600 hover:text-black group font-light  w-fit wrap-break-word"
                     >
                       <span>{item.data}</span>
                       <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-gray-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
