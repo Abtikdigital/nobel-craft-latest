@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@layer components {
+  .sub-heading {
+    @apply text-center text-[clamp(1.5rem,4vw,2.5rem)] md:text-[clamp(2rem,4vw,2.5rem)] font-extrabold  tracking-wide;
+  }
+  .sub-heading2 {
+    @apply flex items-center gap-3 text-[clamp(1rem,1.5vw,1.75rem)] font-extrabold text-[#1F1F1F];
+  }
+  .sub-heading3 {
+    @apply flex items-center gap-3 text-base font-bold text-[#1F1F1F];
+  }
+  .sub-description {
+    @apply text-sm font-light text-gray-100 leading-relaxed ;
+  }
+  .red-white-button {
+    @apply w-fit text-white bg-[#FF1616] px-6 py-2 text-base font-semibold cursor-pointer  hover:bg-red-700 shadow-lg transition-all duration-300;
+  }
+  .white-red-button {
+    @apply w-fit text-black border-2 border-[#FF1616] hover:text-white cursor-pointer bg-white px-6 py-2 text-base font-semibold hover:bg-[#FF1616] shadow-md transition-all duration-300;
+  }
+}
