@@ -22,8 +22,8 @@ const Section = ({ title, heading,heading2 }) => {
         {/* Foreground content */}
         <FadeInSection delay={0.2}>
           <div className="relative z-10 flex flex-col justify-center w-full h-full py-16 px-6 md:px-12 lg:px-24 space-y-10">
-            <div className="flex items-start gap-x-3">
-              <div className="border-l-[8px] border-red-600 h-14 md:h-full"></div>
+            <div className="flex items-start md:gap-x-3">
+              <div className="border-l-[8px] border-red-600 h-12 translate-y-2 md:h-18"></div>
               <h1 className="text-[clamp(3rem,6vw,4rem)] font-extrabold leading-tight px-2">
                 {title}
               </h1>

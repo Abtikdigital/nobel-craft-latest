@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const navbar = [
     { path: "/", title: "Home" },
-    { path: "/About-us", title: "About Us" },
+    { path: "/about", title: "About Us" },
     { 
       path: "/Services", 
       title: "Services",
@@ -54,8 +54,8 @@ const Navbar = () => {
         
       ]
     },
-    { path: "/Projects", title: "Projects" },
-    { path: "/Contact-us", title: "Contact Us" },
+    { path: "/projects", title: "Projects" },
+    { path: "/contact-us", title: "Contact Us" },
   ];
 
   const servicesItem = navbar.find(item => item.path === "/Services");

@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import Home from "../src/Pages/Home"
+import AboutUs from "./Pages/AboutUs"
+import Contact from "./Pages/Contact"
 import ScrollToTop from './utils/ScrollToTop';
+import Project from '../src/Pages/Project'
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+
 function App() {
   const [count, setCount] = useState(0)
   useEffect(() => {
@@ -11,9 +17,15 @@ function App() {
 
   return (
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/Services" element={<Services />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/about" element={<AboutUs/>}/>
+    
+
 
       </Routes>
     </BrowserRouter>
