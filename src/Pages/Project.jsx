@@ -34,7 +34,7 @@ const Project = () => {
 
                 {/* Text Section */}
                 <div className="w-full lg:w-1/2 text-center lg:text-left">
-                    <h2 className="text-3xl font-bold mb-4">About this Project</h2>
+                    <h2 className="text-3xl font-bold mb-4">About this</h2>
                     <p className="text-gray-700 text-lg">
                         This is a description of your content. It can include anything you want to communicate to your users about the section or topic.
                     </p>
