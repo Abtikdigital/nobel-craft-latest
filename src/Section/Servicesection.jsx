@@ -21,22 +21,15 @@ const ServicesSection = () => {
           <div className="flex flex-wrap gap-5">
             <div className="flex-1 min-w-[250px]">
               <p className="sub-description text-black mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
-                dignissim tristique tellus sed faucibus nullam. Tincidunt mauris
-                ut quam sed mauris proin feugiat. Scelerisque lorem posuere
-                iaculis nunc amet phasellus.
+               At NobleCraft, every project matters. From large commercial sites to handcrafted steel furniture, we maintain the same high standards of quality and precision.
               </p>
               <p className="sub-description text-black ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
-                dignissim tristique tellus sed faucibus nullam.
+                Our services cover construction, steel and iron furniture, fabrication, electric goods, and building materials — tailored for builders, architects, and homeowners alike.
               </p>
             </div>
             <div className="flex-1 min-w-[250px]">
               <p className="sub-description text-black mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
-                dignissim tristique tellus sed faucibus nullam. Tincidunt mauris
-                ut quam sed mauris proin feugiat. Scelerisque lorem posuere
-                iaculis nunc amet phasellus.
+                With years of experience and a passion for excellence, NobleCraft ensures timely delivery, professional execution, and customer satisfaction in every project we undertake. No matter the size, your vision is our priority.
               </p>
               <button
                 className="white-red-button"
