@@ -17,7 +17,7 @@ const Footer = () => {
         {
           data: `Address C/O Dorjee Wangmu 
 Khrimu, post office-kitpi, Tawang, Tawang, 
-Tawang, Arunachal Pradesh, india 
+Tawang, Arunachal Pradesh, India 
 Pin 790104.`,
           icon: MapPin,
         },
@@ -33,7 +33,6 @@ Pin 790104.`,
         { data: "Steel Fabrication", link: "/services/steel-fabrication" },
         { data: "Electrical Goods", link: "/services/electrical-goods" },
         { data: "Building Hardware", link: "/services/building-hardware" },
-
       ],
     },
     {
@@ -81,20 +80,26 @@ Pin 790104.`,
               {section.list.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start text-sm text-gray-600 gap-2"
+                  className="flex items-start text-sm text-gray-600 gap-3"
                 >
-                  {item.icon && <item.icon size={16} className="mt-[2px]" />}
-                  {item.link ? (
-                    <Link
-                      to={item.link}
-                      className="relative text-gray-600 hover:text-[#FF1616] group font-light  w-fit wrap-break-word"
-                    >
-                      <span>{item.data}</span>
-                      <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    </Link>
-                  ) : (
-                    <span className="font-light">{item.data}</span>
+                  {item.icon && (
+                    <div className="min-w-[20px] mt-[2px] flex-shrink-0">
+                      <item.icon size={16} />
+                    </div>
                   )}
+                  <div className="break-words">
+                    {item.link ? (
+                      <Link
+                        to={item.link}
+                        className="relative text-gray-600 hover:text-[#FF1616] group font-light w-fit"
+                      >
+                        <span>{item.data}</span>
+                        <span className="block absolute bottom-0 left-0 h-[1px] w-full bg-[#FF1616] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                      </Link>
+                    ) : (
+                      <span className="font-light whitespace-pre-line">{item.data}</span>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -104,7 +109,7 @@ Pin 790104.`,
 
       {/* Bottom Grid with Social + Legal Links aligned to top grid */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-6">
-        {/* Social Icons - aligned to Contact section */}
+        {/* Social Icons */}
         <div className="md:col-span-2 flex items-center gap-3">
           {socialLinks.map((item, idx) => (
             <Link
@@ -120,7 +125,7 @@ Pin 790104.`,
           ))}
         </div>
 
-        {/* Legal Links with underline animation */}
+        {/* Legal Links */}
         <div className="md:col-span-1 flex items-center">
           <Link
             to="/privacy-policy"

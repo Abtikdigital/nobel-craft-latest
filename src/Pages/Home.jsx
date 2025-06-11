@@ -12,8 +12,13 @@ import Image2 from "../assets/Hero/Image2.png";
 import Image3 from "../assets/Hero/Image3.png";
 import FadeInSection from "../utils/FadeIn";
 import LatestProject from "../Section/LatestProject";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
+  const disp = useDispatch()
+  const handleOpen = () => {
+    disp({ type: "open" })
+  }
   return (
     <>
       <Navbar />
@@ -59,7 +64,7 @@ const Home = () => {
             </h2>
           </div>
           <div className="mt-4 md:mt-0">
-            <button className={`white-red-button`}>Free Quote</button>
+            <button className={`white-red-button`} onClick={handleOpen}>Free Quote</button>
           </div>
         </section>
       </FadeInSection>

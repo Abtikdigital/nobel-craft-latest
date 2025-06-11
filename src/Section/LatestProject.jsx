@@ -35,7 +35,7 @@ const LatestProject = () => {
       </section>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 space-x-2  sm:grid-cols-2 md:grid-cols-3 md:px-12 gap-12 mx-auto place-items-center">
+      <div className="grid grid-cols-1 space-x-2  sm:grid-cols-2 lg:grid-cols-3 md:px-12 gap-12 mx-auto place-items-center">
         {projects.map((project, index) => (
           <div
             key={index}

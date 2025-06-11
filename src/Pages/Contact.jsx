@@ -1,3 +1,5 @@
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import Navbar from "../Section/Navbar";
 import Hero from "../Section/Hero";
 import Footer from "../Section/Footer";
@@ -5,6 +7,7 @@ import FadeInSection from "../utils/FadeIn";
 import Image1 from "../assets/ContactUs/Hero.webp";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { addContact } from "../apis/contactApis"; // ✅ adjust if needed
 
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
@@ -27,6 +30,13 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   const faqData = [
     {
@@ -60,9 +70,32 @@ const Contact = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const onSubmit = async (data) => {
+    try {
+      const res = await addContact(data);
+      if (res?.status === 201) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for contacting us.",
+          confirmButtonColor: "#FF1616",
+        });
+        reset();
+      }
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Something went wrong. Please try again.",
+        confirmButtonColor: "#FF1616",
+      });
+    }
+  };
+
   return (
     <>
       <Navbar />
+
       <FadeInSection>
         <Hero
           title="Contact Us"
@@ -94,32 +127,57 @@ const Contact = () => {
 
       <FadeInSection>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-10">
-          <div className="bg-[#F7F7F7] p-6 ">
+          {/* Contact Form */}
+          <div className="bg-[#F7F7F7] p-6">
             <h2 className="sub-heading text-[#2A2A2A] text-left">Get In Touch</h2>
             <div className="h-1 w-12 bg-[#FF1616] my-2"></div>
-            <form className="flex flex-col gap-4 mt-4">
-              <input
-                className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
-                placeholder="Name"
-              />
-              <input
-                className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
-                placeholder="Email"
-              />
-              <textarea
-                className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
-                placeholder="Message"
-                rows={5}
-              ></textarea>
+
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mt-4">
+              <div>
+                <input
+                  className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
+                  placeholder="Name"
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
+              </div>
+              <div>
+                <input
+                  className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
+                  placeholder="Email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Enter a valid email",
+                    },
+                  })}
+                />
+                {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
+              </div>
+              <div>
+                <textarea
+                  className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
+                  placeholder="Message"
+                  rows={5}
+                  {...register("message", { required: "Message is required" })}
+                ></textarea>
+                {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
+              </div>
+
               <div className="flex justify-end">
-                <button className="border border-[#666666] text-[#666666] py-2 px-6 text-sm font-medium  cursor-pointer hover:bg-[#666666] hover:text-white transition duration-300">
+                <button
+                  type="submit"
+                  className="border border-[#666666] text-[#666666] py-2 px-6 text-sm font-medium hover:bg-[#666666] hover:text-white transition duration-300"
+                >
                   SEND MESSAGE
                 </button>
               </div>
             </form>
           </div>
 
-          <div className="bg-white ">
+          {/* FAQ Section */}
+          <div className="bg-white">
             {faqData.map((faq, index, arr) => (
               <FAQCard
                 key={index}

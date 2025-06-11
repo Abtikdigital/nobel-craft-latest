@@ -9,8 +9,13 @@ import Footer from "../Section/Footer";
 import Contact from "../Section/Contact";
 import AboutSection from "../Section/About";
 import ChevronImage from "../assets/OnOurBest/CheveronRight.png";
+import { useDispatch } from "react-redux";
 
 const AboutUs = () => {
+  const disp=useDispatch()
+  const openDialog=()=>{
+disp({type:"open"})
+  }
   const OnlyTheBest = [
     {
       title: "Eco Friendly Construction",
@@ -91,7 +96,7 @@ const AboutUs = () => {
               </div>
             ))}
             <div className=" flex-1  flex justify-center items-center mt-4 ">
-              <button className="white-red-button">FREE QUOTE</button>
+              <button className="white-red-button" onClick={openDialog}>FREE QUOTE</button>
             </div>
           </div>
 
