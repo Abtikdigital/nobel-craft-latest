@@ -111,7 +111,7 @@ const AboutUs = () => {
                 <h2 className="sub-heading">250</h2>
                 <h3 className="sub-heading2 text-white">COMPLETED PROJECTS</h3>
               </div>
-              <div className="bg-[#F7F7F7] border-b rounded-b-lg  md:border-none md:rounded-none text-[#2A2A2A] flex flex-col justify-center items-center py-4">
+              <div className="bg-[#F7F7F7] border-b rounded-b-lg  md:border-r md:border-l md:border-b-0 md:rounded-none text-[#2A2A2A] flex flex-col justify-center items-center py-4">
                 <h2 className="sub-heading">24</h2>
                 <h3 className="sub-heading2">FIELD WORKERS</h3>
               </div>
