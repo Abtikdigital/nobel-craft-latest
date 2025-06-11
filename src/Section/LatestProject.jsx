@@ -35,7 +35,7 @@ const LatestProject = () => {
       </section>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 space-x-2  sm:grid-cols-2 lg:grid-cols-3 md:px-12 gap-12 mx-auto place-items-center">
+      <div className="grid grid-cols-1 space-x-2  sm:grid-cols-2 md:grid-cols-3 md:px-12 gap-12 mx-auto place-items-center">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -49,7 +49,7 @@ const LatestProject = () => {
                 {project.description}
               </p>
               <div>
-                <Link className="border-[#666666] border-1 py-2 text-sm cursor-pointer  duration-300 hover:text-white hover:bg-[#666666] font-medium  px-6  text-[#666666]">
+                <Link className="border-[#666666] border-1 py-2 text-sm cursor-pointer  duration-300 hover:text-white hover:bg-[#666666] font-medium px-4 lg:px-6  text-[#666666]">
                   VIEW PROJECT
                 </Link>
               </div>

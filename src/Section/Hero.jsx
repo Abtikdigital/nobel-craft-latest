@@ -59,7 +59,7 @@ const Section = ({ title, heading, heading2, description }) => {
                 className="flex flex-col gap-3 p-4 rounded-md border-b cursor-pointer border-white/25 last:border-none 
                            hover:bg-red-600 hover:shadow-lg transition-colors duration-300"
               >
-                <h3 className="sub-heading2 flex items-center gap-2">
+                <h3 className="sub-heading2 flex items-center gap-2 text-white">
                   <img
                     src={e.img}
                     alt={`icon-${i}`}

@@ -107,7 +107,7 @@ const Home = () => {
             <button className="white-red-button">About Us</button>
           </div>
           <div className="relative">
-            <img src={AboutImage} alt="About Us" />
+            <img src={AboutImage} alt="About Us " className="md:w-full md:h-full" />
             <div className="md:absolute bottom-0  w-full  grid grid-rows-1 grid-cols-1 md:grid-cols-2  ">
               <div className="bg-[#FF1616] py-4 pl-6">
                 <h2 className="sub-heading2 text-black text-left">
@@ -117,7 +117,7 @@ const Home = () => {
                   (346) 234-6973
                 </a>
               </div>
-              <div className="border-b-1 border-black/25 pl-6 md:pl-0 md:bg-white py-4 pr-6 flex justify-start md:justify-end items-center">
+              <div className="border-b-1 border-black/25 pl-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
                 <button className="white-red-button">
                   ONLINE ESTIMATE FORM
                 </button>
