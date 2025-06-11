@@ -1,6 +1,6 @@
 const AboutSection = () => {
     return (
-        <div className="px-6  flex flex-col justify-center items-center gap-6 md: gap-10 py-10 md:py-20">
+        <div className="px-6  flex flex-col justify-center items-center gap-6 md:gap-10 py-10 ">
             <div className="flex flex-col justify-center items-center gap-3">
                 <h2 className="sub-heading text-[#2A2A2A] ">About us</h2>
                 <div className="bg-[#FF1616] w-14 h-2"></div>

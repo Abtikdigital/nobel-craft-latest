@@ -40,17 +40,17 @@ const Navbar = () => {
 
   const navbar = [
     { path: "/", title: "Home" },
-    { path: "/about", title: "About Us" },
+    { path: "/about-us", title: "About Us" },
     { 
       path: "/Services", 
       title: "Services",
       hasSubmenu: true,
       submenu: [
-        { path: "/Services/construction", title: "Construction" },
-        { path: "/Services/steel-furniture", title: "Steel Furniture" },
-        { path: "/Services/steel-fabrication", title: "Steel Fabrication" },
-        { path: "/Services/electrical-goods", title: "Electrical Goods" },
-        { path: "/Services/building-hardware", title: "Building Hardware" },
+        { path: "/services/construction", title: "Construction" },
+        { path: "/services/steel-furniture", title: "Steel Furniture" },
+        { path: "/services/steel-fabrication", title: "Steel Fabrication" },
+        { path: "/services/electrical-goods", title: "Electrical Goods" },
+        { path: "/services/building-hardware", title: "Building Hardware" },
         
       ]
     },
