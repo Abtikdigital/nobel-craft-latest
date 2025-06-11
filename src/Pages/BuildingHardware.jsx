@@ -12,11 +12,11 @@ const BuildingHardware=()=>{
       <FadeInSection>
         <Hero
           title="Building Hardware"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          description="Durable and high-performance building hardware solutions that ensure strength, reliability, and efficiency for all types of construction and renovation projects."
           heading={[
             {
-              heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
+              heading: "Building Hardware",
+              description: `Durable hardware essentials for any construction or renovation project.`,
               img: Image1,
             },
           ]}
@@ -25,18 +25,10 @@ const BuildingHardware=()=>{
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            At NobleCraft Construction Pvt. Ltd., we offer a wide range of building hardware products that meet the highest industry standards. Whether you're working on a commercial structure or a residential property, our durable and precision-engineered components support every stage of construction with unmatched reliability.
           </div>
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            Our hardware inventory includes fasteners, anchors, reinforcements, brackets, and other essential components — all manufactured to meet strict quality and safety standards. We collaborate with builders, contractors, and architects to ensure seamless integration of hardware that enhances structural integrity and long-term performance.
           </div>
         </div>
       </FadeInSection>
@@ -53,16 +45,15 @@ const BuildingHardware=()=>{
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-                Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-                Proin cursus, dolor a mollis consectetur, risus dolor fermentum
-                massa, a commodo elit dui sit amet risus.
+                At NobleCraft Construction Pvt. Ltd., our building hardware process is designed for precision, reliability, and long-term durability. We ensure each component we deliver is tested, standardized, and perfectly suited to your construction needs — whether you're a builder, architect, or contractor.
+
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
+                <li className="sub-description">Initial Consultation & Site Assessment</li>
+                <li className="sub-description">Customized Design & Material Planning</li>
+                <li className="sub-description">Cost Estimation & Project Timeline Finalization</li>
+                <li className="sub-description">On-Site Construction & Fabrication</li>
+                <li className="sub-description">Ensure on-time delivery with ongoing support</li>
               </ul>
             </div>
             {/* Quote */}
@@ -90,7 +81,34 @@ const BuildingHardware=()=>{
         <LatestProject />
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection
+        faqData={[
+            {
+              question: " 1. What types of building hardware do you offer?",
+              answer:
+                "We offer a wide range of hardware products including fasteners, anchors, brackets, structural supports, and industrial fittings — suitable for residential, commercial, and industrial construction.",
+            },
+            {
+              question: " 2. Are your hardware materials certified?",
+              answer:
+                "Yes, all our hardware components are sourced from certified manufacturers and meet industry standards for quality, safety, and durability.",
+            },
+            {
+              question: "3. Do you provide custom hardware solutions?",
+              answer:
+                "Absolutely. We can recommend or source custom hardware based on your project’s specifications, load requirements, and structural design.",
+            },
+            {
+              question: " 4. Can you help with bulk orders for large construction projects?",
+              answer:
+                "Yes. We specialize in handling bulk requirements for large-scale projects and ensure timely delivery with complete support.",
+            },
+            {
+              question: " 5. Do you offer on-site support or consultation?",
+              answer:
+                "Yes, our team can assist with on-site hardware recommendations, installation guidance, and technical support as needed.",
+            },
+          ]} />
       </FadeInSection>
       <FadeInSection>
         <Contact />

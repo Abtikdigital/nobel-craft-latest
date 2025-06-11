@@ -34,7 +34,7 @@ const AboutUs = () => {
       <FadeInSection>
         <Hero
           title="About Our Construction Company"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          heading2="About Us"
           heading={[
             {
               heading: "Construction",

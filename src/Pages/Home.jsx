@@ -20,7 +20,7 @@ const Home = () => {
       <FadeInSection>
         <Hero
           title="Building the Future, One Brick at a Time"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          heading2="Our Services"
           heading={[
             {
               heading: "Construction",
@@ -122,7 +122,36 @@ const Home = () => {
         </section>
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection
+
+          faqData={[
+            {
+              question: "2. What types of construction projects do you handle?",
+              answer:
+                "We specialize in residential, commercial, and industrial construction projects—from small renovations to large-scale developments.",
+            },
+            {
+              question: "2. Do you offer custom steel or iron furniture?",
+              answer:
+                "Yes. We specialize in custom-designed steel and iron furniture for homes, offices, and industrial spaces — built for durability, functionality, and aesthetics.",
+            },
+            {
+              question: "3. What is your typical project timeline?",
+              answer:
+                "Project timelines vary depending on size and complexity. We provide clear timelines after consultation and stick to agreed schedules to ensure on-time delivery.",
+            },
+            {
+              question: "4. Do you provide electrical goods and building materials too?",
+              answer:
+                "Yes, we supply certified electrical components and high-quality building materials. Our all-in-one service ensures you get everything you need from one trusted source.",
+            },
+            {
+              question: "5. How can I request a quote or consultation?",
+              answer:
+                "You can contact us through our website's inquiry form, email, or phone. We’ll schedule a consultation and provide a detailed quote based on your needs.",
+            },
+          ]}
+        />
       </FadeInSection>
       <FadeInSection>
         <TestimonialsSection />

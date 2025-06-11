@@ -1,7 +1,7 @@
 import { Minus, Plus } from "lucide-react";
 import React, { useState } from "react";
 
-const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
+const FAQCard = ({ question, answer, isOpen, onToggle, arr, index}) => {
   return (
     <div className={`${(arr.length - 1) != index && 'border-b'} border-gray-300 px-4 py-1 `}>
       <div
@@ -26,36 +26,10 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   );
 };
 
-const FAQSection = () => {
+const FAQSection = (props) => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqData = [
-    {
-      question: "1. What types of construction projects do you handle?",
-      answer:
-        "We specialize in residential, commercial, and industrial construction projects—from small renovations to large-scale developments.",
-    },
-    {
-      question: "2. Do you offer custom steel or iron furniture?",
-      answer:
-        "Yes. We specialize in custom-designed steel and iron furniture for homes, offices, and industrial spaces — built for durability, functionality, and aesthetics.",
-    },
-    {
-      question: "3. What is your typical project timeline?",
-      answer:
-        "Project timelines vary depending on size and complexity. We provide clear timelines after consultation and stick to agreed schedules to ensure on-time delivery.",
-    },
-    {
-      question: "4. Do you provide electrical goods and building materials too?",
-      answer:
-        "Yes, we supply certified electrical components and high-quality building materials. Our all-in-one service ensures you get everything you need from one trusted source.",
-    },
-    {
-      question: "5. How can I request a quote or consultation?",
-      answer:
-        "You can contact us through our website's inquiry form, email, or phone. We’ll schedule a consultation and provide a detailed quote based on your needs.",
-    },
-  ];
+ 
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -83,13 +57,14 @@ const FAQSection = () => {
 
       {/* Right Side (FAQ List) */}
       <div className="bg-white ">
-        {faqData.map((faq, index, arr) => (
+        {props?.faqData?.map((faq, index, arr) => (
           <FAQCard
             key={index}
             index={index}
             question={faq.question}
             answer={faq.answer}
             arr={arr}
+
             isOpen={openIndex === index}
             onToggle={() => handleToggle(index)}
           />

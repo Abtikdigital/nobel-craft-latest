@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import FadeInSection from "../utils/FadeIn";
 import BgImage from "../assets/demo.webp";
 
-const Section = ({ title, heading,heading2 }) => {
+const Section = ({ title, heading, heading2, description }) => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-stretch w-full min-h-fit relative">
-      
+
       {/* Left Section (Hero Content) */}
       <div className="w-full lg:w-3/4 relative overflow-hidden text-white flex items-center justify-center bg-black">
         {/* Smooth fade-in background layer */}
@@ -30,9 +30,7 @@ const Section = ({ title, heading,heading2 }) => {
             </div>
 
             <p className="text-lg font-light text-gray-200 px-2 max-w-3xl leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quis
-              egestas pellentesque libero dolor in diam consequat ut. Mi nibh amet
-              viverra id aliquet neque odio.
+              {description}
             </p>
 
             <button className="red-white-button">View our work</button>
@@ -44,7 +42,7 @@ const Section = ({ title, heading,heading2 }) => {
       <div className="w-full lg:w-[30%] bg-[#DB2626] text-white p-6 sm:p-8">
         <FadeInSection delay={0.4}>
           <h2 className="sub-heading border-b border-white/25 mb-2">
-            Our Services
+            {heading2}
           </h2>
 
           <div className="space-y-1">

@@ -11,12 +11,12 @@ const ElectricalGoods=()=>{
     <Navbar />
       <FadeInSection>
         <Hero
-          title="Eletrical Goods"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          title="Electrical Goods"
+          description="high-performance electrical items trusted by industry pros. We supply everything from switches, wires, and conduits to industrial-grade control systems – all sourced for reliability and safety."
           heading={[
             {
-              heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
+              heading: "Electrical Goods",
+              description: `Certified, high-performance electrical items trusted by industry pros..`,
               img: Image1,
             },
           ]}
@@ -25,18 +25,12 @@ const ElectricalGoods=()=>{
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+           At NobleCraft Construction Pvt. Ltd., we offer a wide selection of electrical goods, perfectly suited for both residential and commercial needs. Our products are sourced from trusted brands and are known for durability, efficiency, and safety compliance.
           </div>
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+           Whether you're an architect, builder, or homeowner, our team ensures you get the right solutions for your project. From large-scale installations to everyday essentials, we provide expert recommendations and dependable products every time.
+
+
           </div>
         </div>
       </FadeInSection>
@@ -53,16 +47,14 @@ const ElectricalGoods=()=>{
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-                Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-                Proin cursus, dolor a mollis consectetur, risus dolor fermentum
-                massa, a commodo elit dui sit amet risus.
+                At NobleCraft Construction Pvt. Ltd., our streamlined process ensures quality, efficiency, and transparency from concept to completion. Every project we handle follows a proven method that guarantees timely delivery and client satisfaction.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
+                <li className="sub-description">Initial Consultation & Requirement Gathering</li>
+                <li className="sub-description">Planning, Design, and Cost Estimation</li>
+                <li className="sub-description">Procurement of Quality Materials</li>
+                <li className="sub-description">Skilled Execution with Continuous Supervision</li>
+                <li className="sub-description">Final Handover and Client Review</li>
               </ul>
             </div>
             {/* Quote */}
@@ -90,7 +82,33 @@ const ElectricalGoods=()=>{
         <LatestProject />
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection  faqData={[
+            {
+              question: "1. What types of electrical goods do you supply?",
+              answer:
+                "We supply a wide range of electrical items including switches, wiring, panels, conduits, distribution boards, lighting fixtures, industrial controls, and safety components.",
+            },
+            {
+              question: "2. Are your electrical products certified?",
+              answer:
+                "Yes, all our electrical goods are certified by recognized safety and quality standards. We only deal with trusted brands that meet both national and international compliance.",
+            },
+            {
+              question: "3. Do you provide installation support for electrical goods?",
+              answer:
+                "While we mainly supply the materials, we can connect you with reliable electricians and contractors in our network for professional installation and setup.",
+            },
+            {
+              question: "4. Can I place small or individual orders for electrical products?",
+              answer:
+                "Yes, we cater to both bulk and small orders. Whether you're a homeowner needing a few items or a builder sourcing for an entire site, we’ve got you covered.",
+            },
+            {
+              question: "5. Do you offer custom electrical solutions for projects?",
+              answer:
+                "Absolutely. We assist builders, architects, and engineers with tailored electrical product recommendations based on the project’s technical and safety needs.",
+            },
+          ]}/>
       </FadeInSection>
       <FadeInSection>
         <Contact />

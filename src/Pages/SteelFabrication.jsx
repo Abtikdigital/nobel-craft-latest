@@ -12,12 +12,12 @@ const SteelFabrication=()=>{
       <Navbar />
       <FadeInSection>
         <Hero
-          title="Construction"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          title="Steel Fabrication"
+          description="We specialize in custom steel and iron fabrication for gates, grills, staircases, railings, and industrial structures—crafted with precision, strength, and design flexibility."
           heading={[
             {
-              heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
+              heading: "Steel Fabrication",
+              description: `Custom metalwork for frames, gates, and railings—built with precision to match your needs.`,
               img: Image1,
             },
           ]}
@@ -26,18 +26,12 @@ const SteelFabrication=()=>{
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            At NobleCraft Construction, we offer expert steel and iron fabrication services designed to meet both structural and aesthetic needs. From frames and gates to railings and staircases, our skilled team delivers durable and precise metalwork tailored to your project’s specifications.
           </div>
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            Whether you need custom staircases, balcony railings, industrial frameworks, or decorative elements, we deliver with exacting standards and timely execution.
+
+
           </div>
         </div>
       </FadeInSection>
@@ -54,16 +48,14 @@ const SteelFabrication=()=>{
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-                Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-                Proin cursus, dolor a mollis consectetur, risus dolor fermentum
-                massa, a commodo elit dui sit amet risus.
+                LOur construction and fabrication process is built on precision, efficiency, and transparency. From concept to completion, we ensure every phase is executed with care and professionalism.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
+                <li className="sub-description">Site Visit & Client Consultation</li>
+                <li className="sub-description">Custom Design Planning</li>
+                <li className="sub-description">Material Selection & Cost Estimation</li>
+                <li className="sub-description">Fabrication & On-Site Execution</li>
+                <li className="sub-description">Final Quality Check & Project Delivery</li>
               </ul>
             </div>
             {/* Quote */}
@@ -91,7 +83,33 @@ const SteelFabrication=()=>{
         <LatestProject />
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection faqData={[
+            {
+              question: "1. What types of steel fabrication services do you provide?",
+              answer:
+                "We specialize in custom metalwork for gates, railings, frames, staircases, grills, sheds, and industrial structures.",
+            },
+            {
+              question: "2. Can you handle both residential and commercial projects?",
+              answer:
+                "Yes, we offer steel fabrication solutions for homes, commercial buildings, factories, and warehouses.",
+            },
+            {
+              question: "3. What materials do you use for fabrication?",
+              answer:
+                "We primarily work with high-grade mild steel, stainless steel, and galvanized steel depending on your requirements.",
+            },
+            {
+              question: "4. Is custom design and onsite measurement available?",
+              answer:
+                "Absolutely. We offer custom design services and also provide onsite measurements to ensure a perfect fit.",
+            },
+            {
+              question: "5. How long does fabrication and installation typically take?",
+              answer:
+                "Depending on the size and complexity of the project, fabrication can take anywhere from 7 to 21 days including installation.",
+            },
+            ]}/>
       </FadeInSection>
       <FadeInSection>
         <Contact />

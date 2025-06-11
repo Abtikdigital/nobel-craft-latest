@@ -13,7 +13,8 @@ const Project = () => {
       <Navbar />
       <Hero
         title="project the Future, One Brick at a Time"
-        heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+        heading2="Our Project"
+        description=''
         heading={[
           {
             heading: "Construction",

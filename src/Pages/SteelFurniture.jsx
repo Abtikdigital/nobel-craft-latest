@@ -13,12 +13,12 @@ const SteelFurniture=()=>{
     <Navbar />
       <FadeInSection>
         <Hero
-          title="Construction"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          title="Steel Furniture"
+          description="custom-designed steel furniture for residential, commercial, and industrial spaces—crafted for strength, utility, and modern style."
           heading={[
             {
-              heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
+              heading: "Steel Furniture",
+              description: `Stylish, long-lasting steel furniture for residential and commercial use.`,
               img: Image1,
             },
           ]}
@@ -27,18 +27,10 @@ const SteelFurniture=()=>{
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            At NobleCraft, we design and manufacture premium-quality steel and iron furniture tailored for modern homes, offices, and industrial environments. Our furniture is crafted with durability, precision, and contemporary aesthetics in mind.
           </div>
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+           From custom tables and cabinets to shelving units and workstations, we offer functional designs built to withstand daily wear while enhancing your space. Whether you need bulk manufacturing or a bespoke piece—we deliver on strength and style.
           </div>
         </div>
       </FadeInSection>
@@ -55,16 +47,14 @@ const SteelFurniture=()=>{
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-                Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-                Proin cursus, dolor a mollis consectetur, risus dolor fermentum
-                massa, a commodo elit dui sit amet risus.
+               At NobleCraft, we follow a streamlined, quality-first process to deliver durable and stylish steel furniture. Every step is tailored to meet your exact needs—from design to installation.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
+                <li className="sub-description">Requirement discussion & measurements</li>
+                <li className="sub-description"> Custom design drafting & approval</li>
+                <li className="sub-description">Material cutting & fabrication</li>
+                <li className="sub-description">Surface finishing & quality check</li>
+                <li className="sub-description">Final delivery & on-site fitting</li>
               </ul>
             </div>
             {/* Quote */}
@@ -92,7 +82,34 @@ const SteelFurniture=()=>{
         <LatestProject />
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection
+         faqData={[
+            {
+              question: "1. What types of steel furniture do you manufacture?",
+              answer:
+                "We offer a wide range of steel furniture including wardrobes, office tables, cabinets, chairs, storage racks, and custom-designed solutions for both residential and commercial use.",
+            },
+            {
+              question: "2. Can I request a custom design?",
+              answer:
+                "Yes, we specialize in custom steel furniture. Share your design or requirements, and our team will craft it to your exact specifications.",
+            },
+            {
+              question: "3. What is the average delivery time for an order?",
+              answer:
+                "Standard products are typically delivered within 7–10 business days. Custom furniture orders may take 2–4 weeks depending on complexity and quantity.",
+            },
+            {
+              question: "4. Do you offer powder coating or other finishes?",
+              answer:
+                "Absolutely. We provide various finishes including powder coating, paint, matte, gloss, and rust-resistant treatments based on your preference.",
+            },
+            {
+              question: "5. Is your steel furniture rust-proof and durable?",
+              answer:
+                "Yes. We use high-quality, treated steel to ensure durability, strength, and resistance to corrosion for long-term usage.",
+            },
+          ]} />
       </FadeInSection>
       <FadeInSection>
         <Contact />

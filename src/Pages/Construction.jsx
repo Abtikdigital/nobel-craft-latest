@@ -14,7 +14,7 @@ const Construction = () => {
       <FadeInSection>
         <Hero
           title="Construction"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          description="Building the future with strength and precision—our residential, commercial, and industrial projects are crafted to last and designed to inspire."
           heading={[
             {
               heading: "Construction",
@@ -27,18 +27,12 @@ const Construction = () => {
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+            NobleCraft Construction specializes in high-quality residential, commercial, and industrial building projects. We focus on durable construction, innovative design, and strict safety standards to ensure every structure stands the test of time.
           </div>
           <div className="sub-description text-[#666666]">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            dolorem iure in, provident tempore blanditiis voluptatum corrupti
-            sed dolorum nesciunt voluptatibus sunt aut ipsum neque ullam? Sit
-            ipsa iste ratione doloribus? Quaerat voluptate expedita consequatur
-            explicabo quas, atque unde delectus.
+           From planning and design to final execution, our skilled team delivers projects on time and within budget. With a client-first approach and reliable project management, we create spaces that are both functional and future-ready.
+
+
           </div>
         </div>
       </FadeInSection>
@@ -48,23 +42,22 @@ const Construction = () => {
             {/* heading Section */}
             <div className="flex flex-col space-y-6">
               <h2 className="sub-heading text-4xl text-white text-left">
-                About Process
+                Our Construction Process
               </h2>
               <div className="w-12 h-2 bg-[#FF1616]"></div>
             </div>
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-                Lectus erat, consectetur eu sapien eget rhoncus consectetur sem.
-                Proin cursus, dolor a mollis consectetur, risus dolor fermentum
-                massa, a commodo elit dui sit amet risus.
+               At NobleCraft Construction, we follow a simple and efficient process—from consultation to final handover—ensuring timely delivery, quality work, and complete client satisfaction.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
-                <li className="sub-description">List 1</li>
+                <li className="sub-description">Site visit & client consultation</li>
+                <li className="sub-description">Concept planning & design</li>
+                <li className="sub-description">Budgeting & project timeline approval</li>
+                <li className="sub-description">Material selection & procurement</li>
+                <li className="sub-description">Construction & progress updates</li>
+                <li className="sub-description">Final inspection & handover</li>
               </ul>
             </div>
             {/* Quote */}
@@ -92,7 +85,37 @@ const Construction = () => {
         <LatestProject />
       </FadeInSection>
       <FadeInSection>
-        <FAQSection />
+        <FAQSection
+           faqData={[
+            {
+              question: "1. What types of construction projects do you handle?",
+              answer:
+                "We undertake residential buildings, commercial offices, retail spaces, industrial units, and institutional projects. Our services range from new construction to remodeling and turnkey projects.",
+            },
+            {
+              question: "2. Do you provide design and planning support as well?",
+              answer:
+                "Yes. We offer end-to-end solutions that include architectural design, structural planning, 3D visualization, and building approvals—ensuring a seamless start to your project.",
+            },
+            {
+              question: "3. What is your typical project timeline?",
+              answer:
+                "Project timelines vary based on size and complexity. A typical residential build may take 3–6 months, while larger commercial projects may extend up to 12 months. We provide a detailed schedule before starting.",
+            },
+            {
+              question: "4. Are your construction materials and methods up to standard?",
+              answer:
+                "Absolutely. We use high-grade materials that meet or exceed industry standards and follow best practices in construction safety, environmental compliance, and quality control.",
+            },
+            {
+              question: "5. Can I visit past construction sites or completed projects?",
+              answer:
+                "Yes, we’re happy to arrange site visits for prospective clients. Seeing our completed work is the best way to understand our craftsmanship, attention to detail, and execution quality.",
+            },
+          ]}
+        
+        
+        />
       </FadeInSection>
       <FadeInSection>
         <Contact />
