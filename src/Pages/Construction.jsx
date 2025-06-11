@@ -80,15 +80,14 @@ const Construction = () => {
                 <h3 className="sub-heading2  text-black">(346) 234-6973</h3>
               </div>
               <div className=" border-b-1 border-black/25 flex justify-center items-center bg-white">
-                <button
-                className="white-red-button"
-                >ONLINE ESTIMATE FORM</button>
+                <button className="white-red-button">
+                  ONLINE ESTIMATE FORM
+                </button>
               </div>
             </div>
           </div>
         </div>
       </FadeInSection>
-
       <FadeInSection>
         <LatestProject />
       </FadeInSection>
