@@ -5,7 +5,7 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       star: 5,
-      name: "Tanishq Chaudhary",
+      name: "Lorem Dadi",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
