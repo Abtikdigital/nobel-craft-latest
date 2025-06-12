@@ -70,20 +70,20 @@ const Services = () => {
             <FadeInSection>
                 <section className="md:px-24  flex flex-col gap-6 ">
                     {services.map((section, index) => (
-                        <div className="flex flex-col gap-6  bg-[#F7F7F7] md:pt-12">
+                        <div className="flex flex-col gap-6  bg-[#F7F7F7] pt-6 md:pt-12">
                             {/* Title & Red Bar */}
-                            <div className="px-10">
+                            <div className="px-6 md:px-10">
                                 <h2 className="sub-heading text-left">{section?.title}</h2>
                                 <div className="w-24 h-2 bg-[#FF1616] mt-2"></div>
                             </div>
 
                             {/* Description */}
-                            <div className="sub-description text-[#2A2A2A] px-10">
+                            <div className="sub-description text-[#2A2A2A] px-6 md:px-10">
                                 {section?.description}
                             </div>
 
                             {/* List Section */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-10 ">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-6 md:px-10 ">
                                 {section.lists.map((list, idx, arr) => (
                                     <ul key={idx} className={` list-inside list-disc space-y-2 ${arr.length - 1 != idx && 'border-b-2'}  border-gray-200 pb-2 md:border-none`} >
                                         {list.map((listData, i) => (

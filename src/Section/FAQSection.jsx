@@ -37,10 +37,10 @@ const FAQSection = (props) => {
 
   return (
     <section
-      className="bg-[#F7F7F7] w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-start py-10 px-5 md:py-10 md:px-20"
+      className="bg-[#F7F7F7] w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-start py-10 px-0 md:py-10 md:px-20"
     >
       {/* Left Side */}
-      <div className="grid gap-6">
+      <div className="grid gap-6 px-6 md:px-0">
         <h2 className="sub-heading text-left text-[#2A2A2A]">
           Let’s Build Something Together
         </h2>

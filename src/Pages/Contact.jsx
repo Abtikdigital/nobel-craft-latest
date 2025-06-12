@@ -132,7 +132,7 @@ const Contact = () => {
       </FadeInSection>
 
       <FadeInSection>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-6 py-10">
           {/* Contact Form */}
           <div className="bg-[#F7F7F7] p-6">
             <h2 className="sub-heading text-[#2A2A2A] text-left">Get In Touch</h2>
