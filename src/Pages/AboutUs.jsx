@@ -75,7 +75,7 @@ disp({type:"open"})
       <FadeInSection>
         <div className="flex flex-col-reverse md:flex-row w-full">
           {/* Left Column */}
-          <div className="w-full md:w-1/4 bg-[#F7F7F7] px-4 py-6 md:py-10 flex flex-col ">
+          <div className="w-full md:w-1/4 bg-[#F7F7F7] px-6 py-6 md:py-10 flex flex-col ">
             <h2 className="sub-heading mb-4 text-[#2A2A2A]">Only the Best</h2>
             {OnlyTheBest.map((section, index) => (
               <div
@@ -95,7 +95,7 @@ disp({type:"open"})
                 </div>
               </div>
             ))}
-            <div className=" flex-1  flex justify-center items-center mt-4 ">
+            <div className=" flex-1  flex md:justify-center items-center mt-4 ">
               <button className="white-red-button" onClick={openDialog}>FREE QUOTE</button>
             </div>
           </div>

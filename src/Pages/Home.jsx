@@ -56,7 +56,7 @@ const Home = () => {
           ]}
         />
       </FadeInSection>
-      <FadeInSection>
+      {/* <FadeInSection>
         <section className="grid grid-cols-1 md:grid-cols-4 md:gap-5 text-[#1b1b1b] py-2.5 px-5 md:px-10 items-center">
           <div className="md:col-span-3">
             <h2 className="sub-heading text-[#2A2A2A]">
@@ -67,8 +67,8 @@ const Home = () => {
             <button className={`white-red-button`} onClick={handleOpen}>Free Quote</button>
           </div>
         </section>
-      </FadeInSection>
-      <FadeInSection>
+      </FadeInSection> */}
+      {/* <FadeInSection>
         <section className="grid grid-cols-3 md:grid-cols-4 gap-5 justify-center items-center py-2.5 px-5 md:px-10">
           {Array(8)
             .fill()
@@ -81,15 +81,15 @@ const Home = () => {
               />
             ))}
         </section>
-      </FadeInSection>
+      </FadeInSection> */}
 
       <FadeInSection>
         <Servicesection />
       </FadeInSection>
-
+{/* 
       <FadeInSection>
         <LatestProject />
-      </FadeInSection>
+      </FadeInSection> */}
 
       <FadeInSection>
         <section className="grid grid-cols-1 md:grid-cols-2">
@@ -158,9 +158,9 @@ const Home = () => {
           ]}
         />
       </FadeInSection>
-      <FadeInSection>
+      {/* <FadeInSection>
         <TestimonialsSection />
-      </FadeInSection>
+      </FadeInSection> */}
       <FadeInSection>
         <Contact />
       </FadeInSection>

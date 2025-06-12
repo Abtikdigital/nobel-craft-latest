@@ -16,7 +16,7 @@ const ServicesSection = () => {
           <h2 className="sub-heading text-left text-[#2A2A2A]">
             No Project Too Big Or Too Small
           </h2>
-          <div className="w-12 h-1 bg-red-500 mb-6 rounded"></div>
+          <div className="w-12 h-2  bg-red-500 mb-6 "></div>
 
           <div className="flex flex-wrap gap-5">
             <div className="flex-1 min-w-[250px]">

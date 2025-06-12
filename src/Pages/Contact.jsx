@@ -15,11 +15,11 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
       className={`${arr.length - 1 !== index ? "border-b" : ""} border-gray-300 px-4 py-2`}
     >
       <div
-        className="cursor-pointer flex justify-between items-center text-lg font-semibold text-black py-4"
+        className="cursor-pointer flex justify-between items-center text-lg font-semibold text-black py-4 "
         onClick={onToggle}
       >
         <span className="sub-heading3 text-left w-full">{question}</span>
-        <span className="w-8 h-8 bg-[#FF1616] text-white flex items-center justify-center rounded-full">
+        <span className="w-8 h-8 bg-[#FF1616] text-white flex items-center justify-center rounded-full ">
           {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
         </span>
       </div>
@@ -98,10 +98,16 @@ const Contact = () => {
 
       <FadeInSection>
         <Hero
-          title="Contact Us"
-          heading2="checkFrom residential dream homes to industrial-scale developments, NobleCraft delivers unmatched construction quality, cutting-edge materials, and flawless execution — on time, every time."
+          title="Contact Support"
+          heading2="Contact Us"
           heading={[
             {
+              heading: "Construction",
+              description:
+                "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
+              img: Image1,
+            },
+               {
               heading: "Construction",
               description:
                 "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
@@ -130,7 +136,7 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-[#F7F7F7] p-6">
             <h2 className="sub-heading text-[#2A2A2A] text-left">Get In Touch</h2>
-            <div className="h-1 w-12 bg-[#FF1616] my-2"></div>
+            <div className="h-2 w-12 bg-[#FF1616] my-2"></div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mt-4">
               <div>

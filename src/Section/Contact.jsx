@@ -41,7 +41,7 @@ const Contact = () => {
       <div className="flex flex-col py-8 md:py-16 px-6 md:px-10">
         <div className="flex flex-col gap-3">
           <h2 className="sub-heading text-left">Contact Us</h2>
-          <div className="w-14 bg-black h-1.5 mb-6"></div>
+          <div className="w-14 bg-black h-2 mb-6"></div>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 items-start w-full">

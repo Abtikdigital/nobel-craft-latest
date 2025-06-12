@@ -1,6 +1,6 @@
 import Footer from "../Section/Footer"
 import Navbar from "../Section/Navbar"
-import Image1 from "../assets/SteelFurniture/Image1.png"
+import Image1 from "../assets/SteelIronFabrication/Image1.png"
 import Hero from "../Section/Hero"
 import Contact from "../Section/Contact"
 import LatestProject from "../Section/LatestProject"
@@ -13,7 +13,7 @@ const SteelFurniture=()=>{
     <Navbar />
       <FadeInSection>
         <Hero
-          title="Steel Furniture"
+          title="Steel Iron Fabrication"
           description="custom-designed steel furniture for residential, commercial, and industrial spaces—crafted for strength, utility, and modern style."
           heading={[
             {

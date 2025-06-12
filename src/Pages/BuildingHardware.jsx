@@ -77,9 +77,9 @@ const BuildingHardware=()=>{
           </div>
         </div>
       </FadeInSection>
-      <FadeInSection>
+      {/* <FadeInSection>
         <LatestProject />
-      </FadeInSection>
+      </FadeInSection> */}
       <FadeInSection>
         <FAQSection
         faqData={[

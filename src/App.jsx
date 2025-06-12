@@ -12,6 +12,8 @@ import BuildingHardware from "./Pages/BuildingHardware";
 import ElectricalGoods from "./Pages/ElectricalGoods";
 import SteelFurniture from "./Pages/SteelFurniture";
 import SteelFabrication from "./Pages/SteelFabrication";
+import SteelIron from "./Pages/SteelIron"
+import SteelIronFabrication from "./Pages/SteelIronFabrication"
 import { useDispatch, useSelector } from "react-redux";
 import { X, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -79,7 +81,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Project />} />
+          {/* <Route path="/projects" element={<Project />} /> */}
           <Route path="/services" element={<Services />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -102,6 +104,14 @@ function App() {
           <Route
             path="/services/steel-fabrication"
             element={<SteelFabrication />}
+          />
+          <Route
+            path="/services/steel-iron"
+            element={<SteelIron />}
+          />
+          <Route
+            path="/services/steel-iron-fabrication"
+            element={<SteelIronFabrication />}
           />
         </Routes>
       </BrowserRouter>
