@@ -2,8 +2,14 @@ import Navbar from "../Section/Navbar";
 import Hero from "../Section/Hero";
 import Footer from "../Section/Footer";
 import FadeInSection from "../utils/FadeIn";
+import { useDispatch } from "react-redux";
+
 
 const Services = () => {
+    const disp = useDispatch()
+    const handleOpenDialog = () => {
+        disp({ type: "open" })
+    }
     const services = [
         {
             title: "Building Construction",
@@ -62,7 +68,7 @@ const Services = () => {
                         Get a Quote For Your Project
                     </div>
                     <div className="flex justify-start md:justify-end">
-                        <button className="white-red-button">FREE QUOTE</button>
+                        <button className="white-red-button" onClick={handleOpenDialog}>FREE QUOTE</button>
                     </div>
                 </section>
             </FadeInSection>
@@ -98,7 +104,7 @@ const Services = () => {
                             {/* Button Row */}
                             <div className="grid grid-cols-1 md:grid-cols-2 ">
                                 <div className="bg-[#2A2A2A] py-4 flex justify-center items-center">
-                                    <button className="white-red-button">GET A QUOTE</button>
+                                    <button className="white-red-button" onClick={handleOpenDialog}>GET A QUOTE</button>
                                 </div>
                                 <div className="bg-[#FF1616] py-4 flex justify-center items-center">
                                     <button className="red-white-button border-2 border-white hover:bg-white hover:text-[#2A2A2A]">LEARN MORE</button>

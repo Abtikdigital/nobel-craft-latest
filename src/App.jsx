@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Logo from "./assets/Logo/Logo.png"
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
@@ -120,7 +121,7 @@ function App() {
         <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/50">
           <div className="relative w-screen max-h-screen md:w-[90vw] md:max-w-2xl md:h-[90vh] shadow-lg flex flex-col bg-white">
             <div className="bg-[#FF1616] px-6 py-4 text-white relative">
-              <h2 className="text-2xl font-bold">Noble Craft</h2>
+              <h2 className="text-2xl font-bold">Get A Quote</h2>
               <button
                 onClick={handleClose}
                 className="absolute top-5 right-5 border-2 border-white text-black bg-white p-0.5 hover:ring-1 rounded-sm duration-100 ring-white hover:cursor-pointer"
