@@ -13,7 +13,7 @@ const FadeInSection = ({ children, delay = 0.1 }) => {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{
-        duration: 0.8,
+        duration: 0.9,
         ease: [0.25, 0.46, 0.45, 0.94], // custom ease for smoother motion
         delay,
       }}
