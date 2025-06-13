@@ -14,11 +14,11 @@ const SteelFurniture=()=>{
       <FadeInSection>
         <Hero
           title="Steel Iron Fabrication"
-          description="custom-designed steel furniture for residential, commercial, and industrial spaces—crafted for strength, utility, and modern style."
+          description="Custom-engineered steel and iron solutions built for strength, precision, and modern architectural needs—ideal for residential, commercial, and industrial projects."
           heading={[
             {
-              heading: "Steel Furniture",
-              description: `Stylish, long-lasting steel furniture for residential and commercial use.`,
+              heading: "Steel Iron Fabrication",
+              description: `Durable, custom steel-iron solutions for homes, offices, and industries.`,
               img: Image1,
             },
           ]}
@@ -27,10 +27,10 @@ const SteelFurniture=()=>{
       <FadeInSection>
         <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 px-6 gap-6 md:gap-10 py-10 ">
           <div className="sub-description text-[#666666]">
-            At NobleCraft, we design and manufacture premium-quality steel and iron furniture tailored for modern homes, offices, and industrial environments. Our furniture is crafted with durability, precision, and contemporary aesthetics in mind.
+           At NobleCraft, we specialize in designing and manufacturing robust steel and iron structures. Our fabrication services are tailored for modern construction, blending high durability with contemporary design aesthetics.
           </div>
           <div className="sub-description text-[#666666]">
-           From custom tables and cabinets to shelving units and workstations, we offer functional designs built to withstand daily wear while enhancing your space. Whether you need bulk manufacturing or a bespoke piece—we deliver on strength and style.
+           Whether you need sturdy frameworks, industrial units, or custom architectural elements, our team delivers precision-crafted solutions to match your vision. From bulk production to bespoke installations, we ensure strength, reliability, and refined style.
           </div>
         </div>
       </FadeInSection>
@@ -40,21 +40,21 @@ const SteelFurniture=()=>{
             {/* heading Section */}
             <div className="flex flex-col space-y-6">
               <h2 className="sub-heading text-4xl text-white text-left">
-                About Process
+                Our Fabrication Process
               </h2>
               <div className="w-12 h-2 bg-[#FF1616]"></div>
             </div>
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-               At NobleCraft, we follow a streamlined, quality-first process to deliver durable and stylish steel furniture. Every step is tailored to meet your exact needs—from design to installation.
+               At NobleCraft, we follow a streamlined, quality-driven process to deliver high-performance steel and iron solutions. From concept to completion, every stage is customized to meet your unique requirements.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
-                <li className="sub-description">Requirement discussion & measurements</li>
-                <li className="sub-description"> Custom design drafting & approval</li>
-                <li className="sub-description">Material cutting & fabrication</li>
-                <li className="sub-description">Surface finishing & quality check</li>
-                <li className="sub-description">Final delivery & on-site fitting</li>
+                <li className="sub-description">Initial consultation & site measurements</li>
+                <li className="sub-description">Custom design & client approval</li>
+                <li className="sub-description">Precision cutting & fabrication</li>
+                <li className="sub-description">Surface finishing & quality inspection</li>
+                <li className="sub-description">Final delivery & on-site installation</li>
               </ul>
             </div>
             {/* Quote */}
@@ -85,29 +85,29 @@ const SteelFurniture=()=>{
         <FAQSection
          faqData={[
             {
-              question: "1. What types of steel furniture do you manufacture?",
+              question: "1. What does your steel and iron fabrication service include?",
               answer:
-                "We offer a wide range of steel furniture including wardrobes, office tables, cabinets, chairs, storage racks, and custom-designed solutions for both residential and commercial use.",
+                "We offer full-service fabrication for beams, columns, gates, railings, industrial frames, and more—customized to meet structural, architectural, or industrial requirements.",
             },
             {
-              question: "2. Can I request a custom design?",
+              question: "2. Do you fabricate components for residential and commercial buildings?",
               answer:
-                "Yes, we specialize in custom steel furniture. Share your design or requirements, and our team will craft it to your exact specifications.",
+                "Yes. Our services cover residential, commercial, and industrial needs—whether it's a single custom piece or large-scale structural steelwork.",
             },
             {
-              question: "3. What is the average delivery time for an order?",
+              question: "3. Can you work with client-provided designs or blueprints?",
               answer:
-                "Standard products are typically delivered within 7–10 business days. Custom furniture orders may take 2–4 weeks depending on complexity and quantity.",
+                "Absolutely. We welcome your designs and also provide in-house drafting to refine or develop your ideas to fit your project goals.",
             },
             {
-              question: "4. Do you offer powder coating or other finishes?",
+              question: "4. Is your steel and iron work weather-resistant or coated?",
               answer:
-                "Absolutely. We provide various finishes including powder coating, paint, matte, gloss, and rust-resistant treatments based on your preference.",
+                "Yes. We offer galvanizing, powder coating, and anti-corrosion finishes to ensure long-lasting durability in all weather conditions.",
             },
             {
-              question: "5. Is your steel furniture rust-proof and durable?",
+              question: "7. What’s the usual turnaround time?",
               answer:
-                "Yes. We use high-quality, treated steel to ensure durability, strength, and resistance to corrosion for long-term usage.",
+                "Timelines depend on the scope, but we prioritize efficiency and quality—most projects are completed within 7–20 business days.",
             },
           ]} />
       </FadeInSection>
