@@ -68,12 +68,12 @@ const Section = ({ title, heading, heading2, description, lists }) => {
                   {e.heading}
                 </h3>
                 <p className="sub-description">{e.description}</p>
-                {lists && <ul className="list-disc list-inside space-y-1.5 ">
-                  {lists?.map((list) => (
-                    <li className="sub-description">{list}</li>
-                  ))}</ul>}
               </motion.div>
             ))}
+            {lists && <ul className="list-disc list-inside space-y-1.5  px-4">
+              {lists?.map((list) => (
+                <li className="sub-description border-b rounded py-0.5">{list}</li>
+              ))}</ul>}
           </div>
         </FadeInSection>
       </div>
