@@ -22,6 +22,7 @@ const Construction = () => {
               img: Image1,
             },
           ]}
+          lists={["Building", "Furnituire", "decore","Building", "Furnituire", "decore"]}
         />
       </FadeInSection>
       <FadeInSection>
@@ -30,7 +31,7 @@ const Construction = () => {
             NobleCraft Construction specializes in high-quality residential, commercial, and industrial building projects. We focus on durable construction, innovative design, and strict safety standards to ensure every structure stands the test of time.
           </div>
           <div className="sub-description text-[#666666]">
-           From planning and design to final execution, our skilled team delivers projects on time and within budget. With a client-first approach and reliable project management, we create spaces that are both functional and future-ready.
+            From planning and design to final execution, our skilled team delivers projects on time and within budget. With a client-first approach and reliable project management, we create spaces that are both functional and future-ready.
 
 
           </div>
@@ -49,7 +50,7 @@ const Construction = () => {
             {/* Content Section */}
             <div className="flex flex-col space-y-6">
               <p className="sub-description">
-               At NobleCraft Construction, we follow a simple and efficient process—from consultation to final handover—ensuring timely delivery, quality work, and complete client satisfaction.
+                At NobleCraft Construction, we follow a simple and efficient process—from consultation to final handover—ensuring timely delivery, quality work, and complete client satisfaction.
               </p>
               <ul className="flex flex-col gap-y-2 list-disc list-inside">
                 <li className="sub-description">Site visit & client consultation</li>
@@ -86,7 +87,7 @@ const Construction = () => {
       </FadeInSection> */}
       <FadeInSection>
         <FAQSection
-           faqData={[
+          faqData={[
             {
               question: "1. What types of construction projects do you handle?",
               answer:
@@ -113,8 +114,8 @@ const Construction = () => {
                 "Yes, we’re happy to arrange site visits for prospective clients. Seeing our completed work is the best way to understand our craftsmanship, attention to detail, and execution quality.",
             },
           ]}
-        
-        
+
+
         />
       </FadeInSection>
       <FadeInSection>

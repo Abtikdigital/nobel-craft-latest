@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import FadeInSection from "../utils/FadeIn";
 import BgImage from "../assets/demo.webp";
 
-const Section = ({ title, heading, heading2, description }) => {
+const Section = ({ title, heading, heading2, description, lists }) => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-stretch w-full min-h-fit relative">
 
@@ -68,6 +68,10 @@ const Section = ({ title, heading, heading2, description }) => {
                   {e.heading}
                 </h3>
                 <p className="sub-description">{e.description}</p>
+                {lists && <ul className="list-disc list-inside space-y-1.5 ">
+                  {lists?.map((list) => (
+                    <li className="sub-description">{list}</li>
+                  ))}</ul>}
               </motion.div>
             ))}
           </div>

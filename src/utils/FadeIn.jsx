@@ -1,7 +1,7 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
-const FadeInSection = ({ children, delay = 0.4 }) => {
+const FadeInSection = ({ children, delay = 0.1 }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
