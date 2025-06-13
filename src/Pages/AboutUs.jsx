@@ -20,17 +20,17 @@ disp({type:"open"})
     {
       title: "Eco Friendly Construction",
       description:
-        "Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. ",
+        "We use sustainable materials and energy-efficient methods for greener, long-lasting buildings. ",
     },
     {
       title: "The Newest Technology Repairs",
       description:
-        "Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. ",
+        "Precision-built steel and iron solutions using modern fabrication technology. ",
     },
     {
       title: "High Quality Construction Management",
       description:
-        "Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. ",
+        "Timely execution with strong quality control and safety standards. ",
     },
   ];
   return (

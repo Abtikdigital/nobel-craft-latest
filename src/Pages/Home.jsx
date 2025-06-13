@@ -29,27 +29,27 @@ const Home = () => {
           heading={[
             {
               heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
+              description: `Solutions for home & office builds`,
               img: Image1,
             },
             {
               heading: "Steel Furniture",
-              description: `Stylish, long-lasting steel furniture for residential and commercial use.`,
+              description: `Durable home & office furniture`,
               img: Image2,
             },
             {
               heading: "Steel Fabrication",
-              description: `Custom metalwork for frames, gates, and railings—built with precision to match your needs.`,
+              description: `Custom metalwork, built to last`,
               img: Image3,
             },
             {
               heading: "Electrical Goods",
-              description: `Certified, high-performance electrical items trusted by industry pros.`,
+              description: `High Quality electrical essentials`,
               img: Image3,
             },
             {
               heading: "Building Hardware",
-              description: `Durable hardware essentials for any construction or renovation project.`,
+              description: `Strong hardware for any project`,
               img: Image3,
             }
 

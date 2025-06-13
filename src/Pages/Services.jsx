@@ -12,30 +12,66 @@ const Services = () => {
     }
     const services = [
         {
-            title: "Building Construction",
-            description: " loremd ipsome lorem ipsam lorem ipsam",
+            title: "Construction",
+            description: " We provide comprehensive construction services for homes, offices, and industrial projects—delivered with precision, safety, and on-time execution.",
             lists: [
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
+                ["Residential & commercial construction ", "Turnkey project execution", "Structural design & planning", "RCC & steel framework",],
+                ["Flooring & tiling solutions ", "Plumbing & electrical integration ", "Renovation & remodeling services ", "Compliance with safety codes "],
+                ["Use of quality-certified materials ", "Project management & supervision  ", "Brickwork & plastering", "Timely project delivery ", ],
             ],
         },
         {
-            title: "Building Construction",
-            description: " loremd ipsome lorem ipsam lorem ipsam",
+            title: "Steel Furniture",
+            description: " Custom-designed, durable steel furniture solutions for homes, offices, and industrial spaces—crafted for strength and style.",
             lists: [
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
+                ["Modular office workstations", "Customized wardrobes ", "Powder-coated finish options ", "Welded and bolted structures ", ],
+                ["Heavy-duty storage racks ", "Hospital and lab furniture ", "Weather-resistant outdoor sets", "Eco-friendly, recyclable materials ",],
+                ["Space-saving storage solutions ", "Ergonomic seating and tables ", "Sleek, modern aesthetic designs ", "Rust-proof surface finish ", ],
             ],
         },
         {
-            title: "Building Construction",
-            description: " loremd ipsome lorem ipsam lorem ipsam",
+            title: "Steel Fabrication",
+            description: " High-precision steel fabrication for industrial, commercial, and custom structural needs.",
             lists: [
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
-                ["list1 ", "list1 ", "list1 ", "list1 ", "list1 "],
+                ["Custom steel structures ", "CNC cutting & bending ", "MIG & TIG welding", "Sheet metal bending & forming ",],
+                ["Railings & staircases ", "Machine parts & enclosures", "Pipe and tube fabrication", "Heavy-duty machine parts", ],
+                ["Warehouse fabrication ", "Rust-resistant coatings ", "Skilled craftsmanship & accuracy ", "On-time project delivery", ],
+            ],
+        },
+         {
+            title: "Steel Iron",
+            description: " Durable, high-quality steel and iron works for construction, interiors, and industrial-grade use.",
+            lists: [
+                ["Mild steel gates and grills ", "Iron doors and window frames ", "Steel staircases and railings", "Industrial platforms ",],
+                ["Steel beams and channels ", "Steel beams and channels", "Warehouse frameworks", "Machine enclosures", ],
+                ["Rust-proof finishes", "Precision welding ", "Durable coatings ", "Custom fabrication options", ],
+            ],
+        },
+        {
+            title: "Steel Iron Fabrication",
+            description: " Expert steel and iron fabrication for durable, custom-built residential and industrial solutions.",
+            lists: [
+                ["Mild steel gates & grills ", "Custom staircases & railings ", "Iron window frames", "Heavy-duty platforms ",],
+                ["Structural beams & channels ", "Machine frame fabrication", "Machine frame fabrication", "Sheet metal works", ],
+                ["Rust-resistant finishes", "Powder coating options ", "Precision welding ", "Custom-built solutions", ],
+            ],
+        },
+        {
+            title: "Electrical Goods",
+            description: " We supply high-quality electrical products for safe, efficient, and reliable installations in residential, commercial, and industrial spaces.",
+            lists: [
+                ["Modular switches and sockets ", "Concealed wiring accessories ", "Industrial switchgear", "Smart lighting systems ",],
+                ["LED lights and panels ", "Circuit breakers and MCBs", "Electrical distribution boards", "Wires and cables ", ],
+                ["Weatherproof enclosures", "Energy-saving solutions ", "Surge protectors ", "High-load connectors", ],
+            ],
+        },
+        {
+            title: "Building Hardware",
+            description: " Premium-quality hardware components for strong, long-lasting, and aesthetically integrated construction solutions.",
+            lists: [
+                ["Door hinges and handles ", "Cabinet and drawer channels ", "Tower bolts and latches", "Magnetic catches ",],
+                ["SS screws and fasteners ", "Window rollers and stoppers", "Sliding door fittings", "Wall plugs and anchors", ],
+                ["Curtain brackets and supports", "Glass fittings and clamps ", "Heavy-duty locks and knobs ", "Weatherproof sealants", ],
             ],
         },
     ];
@@ -45,20 +81,14 @@ const Services = () => {
             <FadeInSection>
                 <Hero
                     title="Our Construction Service"
-                    heading2="Contact Us"
+                    heading2=""
                     heading={[
                         {
-                            heading: "Construction",
+                            heading: "Our Construction Services",
                             description:
                                 "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
                             img: "",
-                        },
-                        {
-                            heading: "Construction",
-                            description:
-                                "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
-                            img: "",
-                        },
+                        }
                     ]}
                 />
             </FadeInSection>

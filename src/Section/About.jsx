@@ -7,20 +7,12 @@ const AboutSection = () => {
             </div>
             <div className="grid grid-rows-2 grid-cols-1 md:grid-rows-1 gap-3 md:grid-cols-2 sub-description text-[#666666]">
                 <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
-                    necessitatibus nulla dolorem rem quas assumenda iste qui impedit ut,
-                    quisquam nemo quam earum numquam placeat commodi soluta odio minima
-                    repudiandae repellendus quaerat optio natus, maiores fugiat aliquid?
-                    Eaque harum, molestias eveniet sunt commodi laudantium, ab maiores
-                    incidunt sit pariatur optio.
+                   At NobleCraft Construction Private Limited, we are dedicated to building more than just structures—we build trust, reliability, and long-term value. Our comprehensive range of services includes Construction, Steel Furniture, Steel Fabrication, Electrical Goods, Building Hardware, and Steel & Iron Solutions, designed to serve residential, commercial, and industrial sectors with precision and professionalism.
                 </div>
                 <div>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-                    maiores, tenetur error rerum nam fugit aliquam ullam incidunt ipsum
-                    itaque reiciendis iste voluptas culpa? Minus, dolor illo rem odit
-                    sequi sit soluta blanditiis est maxime, natus eaque facilis, ipsa
-                    ducimus harum dignissimos nam quis assumenda fugiat libero magni quam?
-                    Totam.
+                   From custom steel furniture and advanced fabrication to full-scale construction and quality electrical and hardware supplies, we deliver solutions that combine durability, innovation, and aesthetics. Backed by a skilled team and a commitment to excellence, NobleCraft is the trusted partner for builders, architects, homeowners, and procurement professionals seeking end-to-end infrastructure and interior expertise.
+
+
                 </div>
             </div>
         </div>
