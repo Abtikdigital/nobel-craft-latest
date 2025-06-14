@@ -141,7 +141,7 @@ const Home = () => {
 
           faqData={[
             {
-              question: "2. What types of construction projects do you handle?",
+              question: "1. What types of construction projects do you handle?",
               answer:
                 "We specialize in residential, commercial, and industrial construction projects—from small renovations to large-scale developments.",
             },
