@@ -1,3 +1,4 @@
+import React from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Navbar from "../Section/Navbar";
@@ -7,7 +8,7 @@ import FadeInSection from "../utils/FadeIn";
 import Image1 from "../assets/ContactUs/Hero.webp";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { addContact } from "../apis/contactApis"; // ✅ adjust if needed
+import { addContact } from "../apis/contactApis"; 
 
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
@@ -137,7 +138,7 @@ const Contact = () => {
                 <input
                   className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
                   placeholder="Name"
-                  {...register("name", { required: "Name is required" })}
+                  {...register("name", { required: "* Name is required" })}
                 />
                 {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
               </div>
@@ -146,10 +147,10 @@ const Contact = () => {
                   className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
                   placeholder="Email"
                   {...register("email", {
-                    required: "Email is required",
+                    required: "* Email is required",
                     pattern: {
                       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: "Enter a valid email",
+                      message: "* Enter a valid email",
                     },
                   })}
                 />
@@ -157,10 +158,10 @@ const Contact = () => {
               </div>
               <div>
                 <textarea
-                  className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
+                  className="w-full bg-white border border-gray-300 py-2 px-4 rounded resize-none overflow-y-auto"
                   placeholder="Message"
                   rows={5}
-                  {...register("message", { required: "Message is required" })}
+                  {...register("message")}
                 ></textarea>
                 {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
               </div>
@@ -168,7 +169,7 @@ const Contact = () => {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="border border-[#666666] text-[#666666] py-2 px-6 text-sm font-medium hover:bg-[#666666] hover:text-white transition duration-300"
+                  className="border border-[#666666] cursor-pointer text-[#666666] py-2 px-6 text-sm font-medium hover:bg-[#666666] hover:text-white transition duration-300"
                 >
                   SEND MESSAGE
                 </button>
@@ -200,4 +201,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default React.memo(Contact);

@@ -1,3 +1,4 @@
+import React from "react";
 import Contact from "../Section/Contact";
 import FAQSection from "../Section/FAQSection";
 import Hero from "../Section/Hero";
@@ -5,7 +6,8 @@ import Footer from "../Section/Footer";
 import LatestProject from "../Section/LatestProject";
 import Navbar from "../Section/Navbar";
 import FadeInSection from "../utils/FadeIn";
-import Image1 from "../assets/ConstructionService/Image1.png";
+import Image1 from "../assets/ConstructionService/Image1.jpeg";
+import Image2 from "../assets/ConstructionService/Image2.jpeg"
 
 const Construction = () => {
   return (
@@ -23,6 +25,8 @@ const Construction = () => {
             },
           ]}
           lists={["Building", "Furniture", "Fabrication","Electrical", "Hardware", "decore"]}
+         
+          bgImage={Image2}
         />
       </FadeInSection>
       <FadeInSection>
@@ -127,4 +131,4 @@ const Construction = () => {
     </>
   );
 };
-export default Construction;
+export default React.memo(Construction);

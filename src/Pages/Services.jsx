@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "../Section/Navbar";
 import Hero from "../Section/Hero";
 import Footer from "../Section/Footer";
@@ -74,6 +75,7 @@ const Services = () => {
                 ["Curtain brackets and supports", "Glass fittings and clamps ", "Heavy-duty locks and knobs ", "Weatherproof sealants", ],
             ],
         },
+        
     ];
     return (
         <>
@@ -150,4 +152,4 @@ const Services = () => {
         </>
     );
 };
-export default Services;
+export default React.memo(Services);

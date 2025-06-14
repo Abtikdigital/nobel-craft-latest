@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "../Section/Navbar";
 import FadeInSection from "../utils/FadeIn";
 import Hero from "../Section/Hero";
@@ -118,19 +119,19 @@ disp({type:"open"})
               className="w-full h-auto object-cover"
             />
             <div className="grid grid-rows-4 grid-cols-1 md:grid-rows-2 md:grid-cols-2 md:absolute w-full bottom-0">
-              <div className="bg-[#FF1616] border-b roundedb--lg md:border-none md:rounded-none  flex flex-col justify-center items-center py-4">
+              <div className="bg-[#FF1616] border-b roundedb--lg  hover:bg-transparent/10 cursor-pointer transition-all duration-300 delay-75 md:border-none md:rounded-none  flex flex-col justify-center items-center py-4">
                 <h2 className="sub-heading">12</h2>
                 <h3 className="sub-heading2">YEARS ESTABLISHED</h3>
               </div>
-              <div className="bg-[#2A2A2A] border-b roundedb--lg md:border-none md:rounded-none  text-white flex flex-col justify-center items-center py-4">
+              <div className="bg-[#2A2A2A] border-b roundedb--lg md:border-none hover:bg-transparent/10 cursor-pointer transition-all duration-300 delay-75    md:rounded-none  text-white flex flex-col justify-center items-center py-4">
                 <h2 className="sub-heading">250</h2>
                 <h3 className="sub-heading2 text-white">COMPLETED PROJECTS</h3>
               </div>
-              <div className="bg-[#F7F7F7] border-b rounded-b-lg  md:border-r md:border-l md:border-b-0 md:rounded-none text-[#2A2A2A] flex flex-col justify-center items-center py-4">
+              <div className="bg-[#F7F7F7] border-b rounded-b-lg  md:border-r md:border-l hover:bg-transparent/10 cursor-pointer transition-all duration-300 delay-75   md:border-b-0 md:rounded-none text-[#2A2A2A] flex flex-col justify-center items-center py-4">
                 <h2 className="sub-heading">24</h2>
                 <h3 className="sub-heading2">FIELD WORKERS</h3>
               </div>
-              <div className="bg-[#F7F7F7] border-b rounded-b-lg  md:border-none md:rounded-none  text-[#2A2A2A] flex flex-col justify-center items-center py-4">
+              <div className="bg-[#F7F7F7] border-b rounded-b-lg hover:border-none  md:border-none md:rounded-none hover:bg-transparent/10 cursor-pointer transition-all duration-300 delay-75  text-[#2A2A2A] flex flex-col justify-center items-center py-4">
                 <h2 className="sub-heading">18</h2>
                 <h3 className="sub-heading2">OFFICE STAFF</h3>
               </div>
@@ -149,4 +150,4 @@ disp({type:"open"})
     </>
   );
 };
-export default AboutUs;
+export default React.memo(AboutUs);

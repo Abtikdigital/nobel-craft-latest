@@ -1,18 +1,18 @@
 import Counter from "../Pages/Counter";
-import ServiceImage from "../assets/navbar/image.png";
+import ServiceImage from "../assets/HomeService/Image1.jpeg";
 
 const ServicesSection = () => {
   return (
-    <section className="w-full box-border py-10 px-5 md:px-10 bg-white">
-      <div className="flex flex-col md:flex-row gap-7.5">
-        <div className="flex-1 min-w-[280px]">
+    <section className="w-full box-border  bg-white  ">
+      <div className="flex flex-col md:flex-row gap-7.5 ">
+        <div className="flex-1/4 min-w-[280px]  h-full">
           <img
             src={ServiceImage}
             alt="Construction Image"
-            className="w-full h-auto object-cover rounded-lg"
+            className="w-full  object-fill h-full  max-h-[75vh]"
           />
         </div>
-        <div className="flex-2 px-2.5">
+        <div className="flex-3/4  md:py-0 px-5 md:px-5 flex flex-col justify-center">
           <h2 className="sub-heading text-left text-[#2A2A2A]">
             No Project Too Big Or Too Small
           </h2>
@@ -42,7 +42,7 @@ const ServicesSection = () => {
           <div className="flex flex-wrap gap-5 mt-8">
             <div className="flex-1 min-w-[200px] bg-red-500 text-white rounded-lg text-center py-7 px-5">
               <Counter target={12} />
-              <p className="uppercase text-sm font-semibold mt-2 tracking-wide">
+              <p className="uppercase text-sm font-semibold mt-2 tracking-wide ">
                 Years Established
               </p>
             </div>

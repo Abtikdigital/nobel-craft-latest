@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import FadeInSection from "../utils/FadeIn";
 import BgImage from "../assets/demo.webp";
 
-const Section = ({ title, heading, heading2, description, lists }) => {
+const Section = ({ title, heading, heading2, description, lists,bgImage }) => {
   return (
     <section className="flex flex-col md:flex-row justify-between items-stretch w-full min-h-fit relative">
 
@@ -12,10 +12,10 @@ const Section = ({ title, heading, heading2, description, lists }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(${BgImage})`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(${bgImage?bgImage:BgImage})`,
           }}
         />
 
@@ -72,7 +72,7 @@ const Section = ({ title, heading, heading2, description, lists }) => {
             ))}
             {lists && <ul className="list-disc list-inside space-y-1.5  px-4">
               {lists?.map((list) => (
-                <li className="sub-description border-b rounded py-0.5">{list}</li>
+                <li className="sub-description border-b rounded py-0.5 cursor-pointer ">{list}</li>
               ))}</ul>}
           </div>
         </FadeInSection>

@@ -1,3 +1,4 @@
+import React from "react"
 import Footer from "../Section/Footer"
 import Navbar from "../Section/Navbar"
 import Hero from "../Section/Hero"
@@ -6,6 +7,10 @@ import Contact from "../Section/Contact"
 import FAQSection from "../Section/FAQSection"
 import FadeInSection from "../utils/FadeIn"
 import LatestProject from "../Section/LatestProject"
+import Image2 from "../assets/ElectricalGoodsService/Image2.jpg"
+import Image3 from "../assets/ElectricalGoodsService/Image3.jpg"
+
+
 const ElectricalGoods=()=>{
     return(<>
     <Navbar />
@@ -21,6 +26,7 @@ const ElectricalGoods=()=>{
             },
           ]}
            lists={["Switches & Sockets", "Wires & Cables", "LED Lights","Panels & DB Boxes", "Plugs & Sockets", "Pipe & Fittings"]}
+          bgImage={Image3}
         />
       </FadeInSection>
       <FadeInSection>
@@ -64,7 +70,7 @@ const ElectricalGoods=()=>{
             </div>
           </div>
           <div className="w-full md:w-3/4 relative ">
-            <img src={Image1} className="w-full h-full" />
+            <img src={Image2} className="w-full h-full" />
             <div className=" md:absolute w-full bottom-0  grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 ">
               <div className="bg-[#FF1616] w-full py-4 pl-6 ">
                 <h2 className="sub-heading2  text-black ">Call for a Quote</h2>
@@ -120,4 +126,4 @@ const ElectricalGoods=()=>{
     
     </>)
 }
-export default ElectricalGoods
+export default React.memo(ElectricalGoods)

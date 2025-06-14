@@ -1,3 +1,4 @@
+import React from "react"
 import Footer from "../Section/Footer"
 import Navbar from "../Section/Navbar"
 import Image1 from "../assets/SteelIron/Image1.png"
@@ -6,8 +7,8 @@ import Contact from "../Section/Contact"
 import LatestProject from "../Section/LatestProject"
 import FadeInSection from "../utils/FadeIn"
 import FAQSection from "../Section/FAQSection"
-
-
+import Image2 from "../assets/SteelIron/Image2.jpg"
+import Image3 from "../assets/SteelIron/Image3.jpg"
 const SteelFurniture=()=>{
     return(<>
     <Navbar />
@@ -23,6 +24,7 @@ const SteelFurniture=()=>{
             },
           ]}
            lists={["Steel Rods & Bars", "Iron Sheets & Plates", "Channels & Angles","Beams & Columns", "Pipes & Tubes", "Customized Supply"]}
+          bgImage={Image2}
         />
       </FadeInSection>
       <FadeInSection>
@@ -64,7 +66,7 @@ const SteelFurniture=()=>{
             </div>
           </div>
           <div className="w-full md:w-3/4 relative ">
-            <img src={Image1} className="w-full h-full" />
+            <img src={Image3} className="w-full h-full" />
             <div className=" md:absolute w-full bottom-0  grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 ">
               <div className="bg-[#FF1616] w-full py-4 pl-6 ">
                 <h2 className="sub-heading2  text-black ">Call for a Quote</h2>
@@ -120,4 +122,4 @@ const SteelFurniture=()=>{
       </FadeInSection>
     </>)
 }
-export default SteelFurniture
+export default React.memo(SteelFurniture)

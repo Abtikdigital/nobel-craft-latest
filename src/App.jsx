@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -293,4 +294,4 @@ function CustomDropdown({ value, onChange, error }) {
   );
 }
 
-export default App;
+export default React.memo(App);
