@@ -8,7 +8,7 @@ import FadeInSection from "../utils/FadeIn";
 import Image1 from "../assets/ContactUs/Hero.webp";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { addContact } from "../apis/contactApis"; 
+import { addContact } from "../apis/contactApis";
 
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
@@ -20,8 +20,8 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
         onClick={onToggle}
       >
         <span className="sub-heading3 text-left w-full">{question}</span>
-        <span className="w-8 h-8 bg-[#FF1616] text-white flex items-center justify-center rounded-full ">
-          {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+        <span className="w-6 h-6 bg-[#FF1616] text-white flex items-center justify-center rounded-full ">
+          {isOpen ? <Minus className="w-8 h-8" /> : <Plus className="w-8 h-8" />}
         </span>
       </div>
       {isOpen && <p className="sub-description text-[#666666] pb-4">{answer}</p>}
@@ -107,7 +107,7 @@ const Contact = () => {
                 "Contact us for quick help with construction, fabrication, or material needs—fast, reliable, and expert support.",
               img: Image1,
             },
-            
+
           ]}
         />
       </FadeInSection>
@@ -121,7 +121,7 @@ const Contact = () => {
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <button className="white-red-button">ONLINE ESTIMATE FORM</button>
+            <button className="white-red-button">GET A FREE QUOTE</button>
           </div>
         </div>
       </FadeInSection>

@@ -78,7 +78,7 @@ const ElectricalGoods=()=>{
               </div>
               <div className=" border-b-1 border-black/25 flex justify-center items-center bg-white">
                 <button className="white-red-button">
-                  ONLINE ESTIMATE FORM
+                  GET A FREE QUOTE
                 </button>
               </div>
             </div>
