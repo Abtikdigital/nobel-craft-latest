@@ -42,6 +42,16 @@ const Home = () => {
               description: `Custom metalwork, built to last`,
               img: Image3,
             },
+             {
+              heading: "Steel Iron",
+              description: `Premium grade iron solutions`,
+              img: Image3,
+            },
+             {
+              heading: "Steel Iron Fabrication",
+              description: `Tailored steel & iron fabrication`,
+              img: Image3,
+            },
             {
               heading: "Electrical Goods",
               description: `High Quality electrical essentials`,

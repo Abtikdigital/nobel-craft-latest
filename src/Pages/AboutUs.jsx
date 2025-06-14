@@ -41,31 +41,41 @@ disp({type:"open"})
           title="About Our Construction Company"
           heading2="About Us"
           heading={[
-            {
-              heading: "Construction",
-              description: `Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.`,
-              img: Image1,
-            },
-            {
-              heading: "Steel Furniture",
-              description: `Stylish, long-lasting steel furniture for residential and commercial use.`,
-              img: Image2,
-            },
-            {
-              heading: "Steel Fabrication",
-              description: `Custom metalwork for frames, gates, and railings—built with precision to match your needs.`,
-              img: Image3,
-            },
-            {
-              heading: "Electrical Goods",
-              description: `Certified, high-performance electrical items trusted by industry pros.`,
-              img: Image3,
-            },
-            {
-              heading: "Building Hardware",
-              description: `Durable hardware essentials for any construction or renovation project.`,
-              img: Image3,
-            },
+         {
+          heading: "Construction",
+          description: `Solutions for home & office builds`,
+          img: Image1,
+         },
+         {
+          heading: "Steel Furniture",
+          description: `Durable home & office furniture`,
+          img: Image2,
+         },
+         {
+          heading: "Steel Fabrication",
+          description: `Custom metalwork, built to last`,
+          img: Image3,
+         },
+         {
+          heading: "Steel Iron",
+          description: `Premium grade iron solutions`,
+          img: Image3,
+         },
+         {
+          heading: "Steel Iron Fabrication",
+          description: `Tailored steel & iron fabrication`,
+          img: Image3,
+         },
+         {
+          heading: "Electrical Goods",
+          description: `High Quality electrical essentials`,
+          img: Image3,
+         },
+         {
+          heading: "Building Hardware",
+          description: `Strong hardware for any project`,
+          img: Image3,
+         }
           ]}
         />
       </FadeInSection>
