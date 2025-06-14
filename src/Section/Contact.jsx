@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="grid bg-[#FF1616] grid-cols-1 md:grid-cols-2">
+    <div className="grid bg-[#FF1616] grid-cols-1 md:grid-cols-2 ">
       <div>
         <img src={Image1} className="w-full h-full object-cover" alt="Contact Banner" />
       </div>
@@ -44,7 +44,7 @@ const Contact = () => {
           <div className="w-14 bg-black h-2 mb-6"></div>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 items-start w-full">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6 items-start w-full justify-center">
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-3">
             <div className="w-full">
               <input

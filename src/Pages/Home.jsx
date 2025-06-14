@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "../Section/Navbar";
 import AboutImage from "../assets/serviceimg.png";
 
@@ -96,14 +97,14 @@ const Home = () => {
       <FadeInSection>
         <Servicesection />
       </FadeInSection>
-{/* 
+      {/* 
       <FadeInSection>
         <LatestProject />
       </FadeInSection> */}
 
       <FadeInSection>
-        <section className="grid grid-cols-1 md:grid-cols-2">
-          <div className="bg-[#2A2A2A] p-6 flex flex-col gap-6 justify-center">
+        <section className="grid grid-cols-1 md:grid-cols-2 bg-[#2A2A2A] justify-center items-center">
+          <div className=" p-6 flex flex-col gap-6 justify-center">
             <h2 className="sub-heading text-white text-left">
               We Build Trust — One Project at a Time
             </h2>
@@ -124,7 +125,7 @@ const Home = () => {
                  +91 70854 87001
                 </a>
               </div>
-              <div className="border-b-1 border-black/25 pl-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
+              <div className="border-b-1 border-black/25 px-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
                 <button className="white-red-button">
                   ONLINE ESTIMATE FORM
                 </button>
@@ -176,4 +177,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default React.memo(Home);

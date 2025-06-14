@@ -1,3 +1,4 @@
+import React from "react"
 import Footer from "../Section/Footer"
 import Navbar from "../Section/Navbar"
 import Image1 from "../assets/SteelFabricationService/Image1.png"
@@ -6,6 +7,8 @@ import FAQSection from "../Section/FAQSection"
 import LatestProject from "../Section/LatestProject"
 import FadeInSection from "../utils/FadeIn"
 import Hero from "../Section/Hero"
+import Image2 from "../assets/SteelFabricationService/Image2.jpg"
+import Image3 from "../assets/SteelFabricationService/Image3.jpg"
 
 const SteelFabrication=()=>{
     return(<>
@@ -22,6 +25,7 @@ const SteelFabrication=()=>{
             },
           ]}
            lists={["Gates & Railings", "Window Grills", "Steel Frames","Staircase Fabrication", "Custom Welding", "Industrial Structures"]}
+          bgImage={Image2}
         />
       </FadeInSection>
       <FadeInSection>
@@ -65,7 +69,7 @@ const SteelFabrication=()=>{
             </div>
           </div>
           <div className="w-full md:w-3/4 relative ">
-            <img src={Image1} className="w-full h-full" />
+            <img src={Image3} className="w-full h-full" />
             <div className=" md:absolute w-full bottom-0  grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 ">
               <div className="bg-[#FF1616] w-full py-4 pl-6 ">
                 <h2 className="sub-heading2  text-black ">Call for a Quote</h2>
@@ -120,4 +124,4 @@ const SteelFabrication=()=>{
       </FadeInSection>
     </>)
 }
-export default SteelFabrication
+export default React.memo(SteelFabrication)

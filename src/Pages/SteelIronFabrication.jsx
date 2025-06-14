@@ -1,13 +1,14 @@
+import React from "react"
 import Footer from "../Section/Footer"
 import Navbar from "../Section/Navbar"
-import Image1 from "../assets/SteelIronFabrication/Image1.png"
+import Image1 from "../assets/SteelIronFabrication/Image1.jpg"
 import Hero from "../Section/Hero"
 import Contact from "../Section/Contact"
 import LatestProject from "../Section/LatestProject"
 import FadeInSection from "../utils/FadeIn"
 import FAQSection from "../Section/FAQSection"
-
-
+import Image2 from "../assets/SteelIronFabrication/Image2.jpg"
+import Image3 from "../assets/SteelIronFabrication/Image3.png"
 const SteelFurniture=()=>{
     return(<>
     <Navbar />
@@ -23,6 +24,7 @@ const SteelFurniture=()=>{
             },
           ]}
            lists={["Gates & Grills", "Stair Railings", "Window Frames","Structural Supports", "Custom Welding", "Industrial Fabrication"]}
+          bgImage={Image2}
         />
       </FadeInSection>
       <FadeInSection>
@@ -120,4 +122,4 @@ const SteelFurniture=()=>{
       </FadeInSection>
     </>)
 }
-export default SteelFurniture
+export default React.memo(SteelFurniture)
