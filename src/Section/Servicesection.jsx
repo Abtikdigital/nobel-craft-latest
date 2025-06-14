@@ -3,7 +3,7 @@ import ServiceImage from "../assets/HomeService/Image1.jpeg";
 
 const ServicesSection = () => {
   return (
-    <section className="w-full box-border  bg-white  ">
+    <section className="w-full box-border  bg-white py-10 md:py-0 ">
       <div className="flex flex-col md:flex-row gap-7.5 ">
         <div className="flex-1/4 min-w-[280px]  h-full">
           <img

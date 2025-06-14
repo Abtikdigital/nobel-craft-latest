@@ -125,9 +125,9 @@ const Home = () => {
                  +91 70854 87001
                 </a>
               </div>
-              <div className="border-b-1 border-black/25 px-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
+              <div className="border-b-1 border-black/25 px-6 md:px-0 md:pl-0 md:bg-white py-4  flex justify-start md:justify-center items-center">
                 <button className="white-red-button">
-                  ONLINE ESTIMATE FORM
+                GET A  FREE QUOTE
                 </button>
               </div>
             </div>
