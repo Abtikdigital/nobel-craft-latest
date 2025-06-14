@@ -47,7 +47,7 @@ const Contact = () => {
     {
       question: "2. Where is your office located?",
       answer:
-        "Our office is located C/O Dorjee Wangmu. Khrimu, post office-kitpi, Tawang, Tawang, Tawang, Arunachal Pradesh, India. Pin 790104. You can also find the location map at the bottom of this page.",
+        "Our office is located C/O Dorjee Wangmu. Khrimu, post office-kitpi, Tawang, Arunachal Pradesh, India. Pin 790104. You can also find the location map at the bottom of this page.",
     },
     {
       question: "3. What areas do you serve?",
