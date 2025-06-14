@@ -20,6 +20,7 @@ const BuildingHardware=()=>{
               img: Image1,
             },
           ]}
+           lists={["Door Handles & Locks", "Cabinet Hardware", "Screws & Nuts","Window Fittings", "Wall Plugs & Anchors", "Hinges & Locks"]}
         />
       </FadeInSection>
       <FadeInSection>

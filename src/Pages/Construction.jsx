@@ -22,7 +22,7 @@ const Construction = () => {
               img: Image1,
             },
           ]}
-          lists={["Building", "Furnituire", "decore","Building", "Furnituire", "decore"]}
+          lists={["Building", "Furniture", "Fabrication","Electrical", "Hardware", "decore"]}
         />
       </FadeInSection>
       <FadeInSection>

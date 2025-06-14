@@ -21,6 +21,7 @@ const SteelFabrication=()=>{
               img: Image1,
             },
           ]}
+           lists={["Gates & Railings", "Window Grills", "Steel Frames","Staircase Fabrication", "Custom Welding", "Industrial Structures"]}
         />
       </FadeInSection>
       <FadeInSection>

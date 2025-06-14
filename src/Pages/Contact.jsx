@@ -40,29 +40,29 @@ const Contact = () => {
 
   const faqData = [
     {
-      question: "1. What types of construction projects do you handle?",
+      question: "1. How can I contact NobleCraft?",
       answer:
-        "We specialize in residential, commercial, and industrial construction projects—from small renovations to large-scale developments.",
+        "You can reach us via the contact form on this page, by phone, or by email. We’re here to assist you during business hours.",
     },
     {
-      question: "2. Do you offer custom steel or iron furniture?",
+      question: "2. Where is your office located?",
       answer:
-        "Yes. We specialize in custom-designed steel and iron furniture for homes, offices, and industrial spaces — built for durability, functionality, and aesthetics.",
+        "Our office is located C/O Dorjee Wangmu. Khrimu, post office-kitpi, Tawang, Tawang, Tawang, Arunachal Pradesh, India. Pin 790104. You can also find the location map at the bottom of this page.",
     },
     {
-      question: "3. What is your typical project timeline?",
+      question: "3. What areas do you serve?",
       answer:
-        "Project timelines vary depending on size and complexity. We provide clear timelines after consultation and stick to agreed schedules to ensure on-time delivery.",
+        "We primarily serve clients across Tawang, Arunachal Pradesh, but can also accommodate projects pan-India based on requirements.",
     },
     {
-      question: "4. Do you provide electrical goods and building materials too?",
+      question: "4. Is my information safe when I submit the form?",
       answer:
-        "Yes, we supply certified electrical components and high-quality building materials. Our all-in-one service ensures you get everything you need from one trusted source.",
+        "Absolutely. We respect your privacy and ensure all shared information is kept confidential and used only to respond to your inquiry.",
     },
     {
-      question: "5. How can I request a quote or consultation?",
+      question: "5. What are your working hours?",
       answer:
-        "You can contact us through our website's inquiry form, email, or phone. We’ll schedule a consultation and provide a detailed quote based on your needs.",
+        "We are open from Monday to Saturday, 10:00 AM to 6:00 PM. We are closed on Sundays and public holidays.",
     },
   ];
 
@@ -98,21 +98,15 @@ const Contact = () => {
 
       <FadeInSection>
         <Hero
-          title="Contact Support"
-          heading2="Contact Us"
+          title="Contact Us"
           heading={[
             {
-              heading: "Construction",
+              heading: "Contact Us",
               description:
-                "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
+                "Contact us for quick help with construction, fabrication, or material needs—fast, reliable, and expert support.",
               img: Image1,
             },
-               {
-              heading: "Construction",
-              description:
-                "Full-scale building solutions for homes, offices, and industries—safe, strong, and precise.",
-              img: Image1,
-            },
+            
           ]}
         />
       </FadeInSection>

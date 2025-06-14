@@ -20,6 +20,7 @@ const ElectricalGoods=()=>{
               img: Image1,
             },
           ]}
+           lists={["Switches & Sockets", "Wires & Cables", "LED Lights","Panels & DB Boxes", "Plugs & Sockets", "Pipe & Fittings"]}
         />
       </FadeInSection>
       <FadeInSection>

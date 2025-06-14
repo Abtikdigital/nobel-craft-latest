@@ -22,6 +22,7 @@ const SteelFurniture=()=>{
               img: Image1,
             },
           ]}
+           lists={["Chairs & Stools", "Dining & Cafe Sets", "Cabinets & Lockers","Office Desks", "Custom Fabrications", "Beds & Bunk Frames"]}
         />
       </FadeInSection>
       <FadeInSection>
