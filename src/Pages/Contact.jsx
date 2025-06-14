@@ -114,7 +114,7 @@ const Contact = () => {
       <FadeInSection>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white py-10 px-6 text-center">
           <div className="md:col-span-2 flex flex-col justify-center items-center">
-            <h3 className="sub-heading text-[#FF1616]">Call: (541) 931-3526</h3>
+            <h3 className="sub-heading text-[#FF1616]">Call: +91 70854 87001</h3>
             <p className="sub-heading2 mt-2">
               We Can’t Wait to Make Your Ideas a Reality
             </p>

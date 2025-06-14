@@ -67,7 +67,7 @@ const BuildingHardware=()=>{
             <div className=" md:absolute w-full bottom-0  grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 ">
               <div className="bg-[#FF1616] w-full py-4 pl-6 ">
                 <h2 className="sub-heading2  text-black ">Call for a Quote</h2>
-                <h3 className="sub-heading2  text-black">(346) 234-6973</h3>
+                <h3 className="sub-heading2  text-black">+91 70854 87001</h3>
               </div>
               <div className=" border-b-1 border-black/25 flex justify-center items-center bg-white">
                 <button className="white-red-button">

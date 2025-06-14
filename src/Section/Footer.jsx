@@ -21,8 +21,8 @@ Tawang, Arunachal Pradesh, India
 Pin 790104.`,
           icon: MapPin,
         },
-        { data: "contact@example.com", icon: MailIcon },
-        { data: "+1 (123) 456-7890", icon: Phone },
+        { data: "thutant518@gmail.com", icon: MailIcon },
+        { data: "+91 70854 87001", icon: Phone },
       ],
     },
     {

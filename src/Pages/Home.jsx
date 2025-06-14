@@ -105,14 +105,11 @@ const Home = () => {
         <section className="grid grid-cols-1 md:grid-cols-2">
           <div className="bg-[#2A2A2A] p-6 flex flex-col gap-6 justify-center">
             <h2 className="sub-heading text-white text-left">
-              We’ve Been Building For Over 10 Years
+              We Build Trust — One Project at a Time
             </h2>
             <div className="w-24 h-2 bg-[#FF1616]"></div>
             <h3 className="sub-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sapien,
-              dignissim tristique tellus sed faucibus nullam. Tincidunt mauris
-              ut quam sed mauris proin feugiat. Scelerisque lorem posuere
-              iaculis nunc amet phasellus.
+              At NobleCraft Construction Pvt. Ltd., we turn ideas into reality with strength, precision, and trust. Whether it’s large-scale construction, custom steel and iron furniture, or detailed fabrication work, every project reflects our unwavering commitment to quality, reliability, and craftsmanship.
             </h3>
             <button className="white-red-button">About Us</button>
           </div>
@@ -124,7 +121,7 @@ const Home = () => {
                   Call For Quote
                 </h2>
                 <a className="sub-heading2 text-black" href="tel:+13462346973">
-                  (346) 234-6973
+                 +91 70854 87001
                 </a>
               </div>
               <div className="border-b-1 border-black/25 pl-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
