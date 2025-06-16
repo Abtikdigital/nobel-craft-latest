@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Image1 from "../assets/Contact/image1.png";
-import { addContact } from "../api/contactApis"; // Adjust import path if needed
+import {handler} from "../api/contactApis" // Adjust import path if needed
 
 const Contact = () => {
   const {
@@ -13,7 +13,7 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await addContact(data);
+      const res = await handler(data);
       if (res?.status === 201) {
         Swal.fire({
           icon: "success",
