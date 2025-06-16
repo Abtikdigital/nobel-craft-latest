@@ -19,7 +19,7 @@ import SteelIronFabrication from "./Pages/SteelIronFabrication"
 import { useDispatch, useSelector } from "react-redux";
 import { X, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { addQuote } from "./apis/quoteApis";
+import { addQuote } from "./api/quoteApis";
 import Swal from "sweetalert2";
 
 const serviceOptions = [

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Image1 from "../assets/Contact/image1.png";
-import { addContact } from "../apis/contactApis"; // Adjust import path if needed
+import { addContact } from "../api/contactApis"; // Adjust import path if needed
 
 const Contact = () => {
   const {
