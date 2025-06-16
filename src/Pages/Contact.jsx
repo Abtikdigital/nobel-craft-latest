@@ -9,7 +9,7 @@ import Image1 from "../assets/ContactUs/Hero.webp";
 import IconImage1 from "../assets/ContactUs/Icon1.png";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { addContact } from "../api/contactApis";
+import handler, { addContact } from "../api/contactApis";
 import IconImage2 from "../assets/ContactUs/phone-call.png";
 import IconImage3 from "../assets/ContactUs/email.png";
 import IconImage4 from "../assets/ContactUs/maps-and-flags.png";
@@ -88,7 +88,7 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await addContact(data);
+      const res = await handler(data);
       if (res?.status === 201) {
         Swal.fire({
           icon: "success",
