@@ -7,8 +7,10 @@ import {
   Facebook,
   Twitter,
   Instagram,
-} from "lucide-react";
 
+
+} from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"
 const Footer = () => {
   const footerData = [
     {
@@ -59,6 +61,8 @@ Pin 790104.`,
     { icon: Facebook, link: "/facebook" },
     { icon: Twitter, link: "/twitter" },
     { icon: Instagram, link: "/instagram" },
+    { icon: FaWhatsapp, link: "https://api.whatsapp.com/send/?phone=917085487001&text&type=phone_number&app_absent=0" },
+
   ];
 
   return (
@@ -114,16 +118,17 @@ Pin 790104.`,
         {/* Social Icons */}
         <div className="md:col-span-2 flex items-center gap-3">
           {socialLinks.map((item, idx) => (
-            <Link
+            <a
               key={idx}
-              to={item.link}
+              target="_balnk"
+              href={item.link}
               className="rounded-full group bg-gray-200 hover:bg-red-500 transition-colors duration-300 p-2 flex items-center justify-center"
             >
               <item.icon
                 size={22}
                 className="text-gray-700 group-hover:text-white transition duration-300"
               />
-            </Link>
+            </a>
           ))}
         </div>
 

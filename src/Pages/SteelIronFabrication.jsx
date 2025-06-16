@@ -9,7 +9,13 @@ import FadeInSection from "../utils/FadeIn"
 import FAQSection from "../Section/FAQSection"
 import Image2 from "../assets/SteelIronFabrication/Image2.jpg"
 import Image3 from "../assets/SteelIronFabrication/Image3.png"
+import IconImage from "../assets/SteelIronFabrication/IconImage.png"
+import { useDispatch } from "react-redux"
 const SteelFurniture=()=>{
+  const disp=useDispatch()
+  const handleOpenDialog=()=>{
+    disp({type:"open"})
+  }
     return(<>
     <Navbar />
       <FadeInSection>
@@ -20,7 +26,7 @@ const SteelFurniture=()=>{
             {
               heading: "Steel Iron Fabrication",
               description: `Durable, custom steel-iron solutions for homes, offices, and industries.`,
-              img: Image1,
+              img: IconImage,
             },
           ]}
            lists={["Gates & Grills", "Stair Railings", "Window Frames","Structural Supports", "Custom Welding", "Industrial Fabrication"]}
@@ -62,7 +68,7 @@ const SteelFurniture=()=>{
             </div>
             {/* Quote */}
             <div className="flex-1 flex justify-center items-center">
-              <button className="white-red-button">FREE QUOTE</button>
+              <button className="white-red-button" onClick={handleOpenDialog}>FREE QUOTE</button>
             </div>
           </div>
           <div className="w-full md:w-3/4 relative ">
@@ -70,10 +76,10 @@ const SteelFurniture=()=>{
             <div className=" md:absolute w-full bottom-0  grid grid-cols-1 grid-rows-2 md:grid-rows-1 md:grid-cols-2 ">
               <div className="bg-[#FF1616] w-full py-4 pl-6 ">
                 <h2 className="sub-heading2  text-black ">Call for a Quote</h2>
-                <h3 className="sub-heading2  text-black">+91 70854 87001</h3>
+                <h3 className="sub-heading2  text-black"><a href="tel:+91 70854 87001">+91 70854 87001</a></h3>
               </div>
               <div className=" border-b-1 border-black/25 flex justify-center items-center bg-white">
-                <button className="white-red-button">
+                <button className="white-red-button" onClick={handleOpenDialog}>
                   GET A FREE QUOTE
                 </button>
               </div>

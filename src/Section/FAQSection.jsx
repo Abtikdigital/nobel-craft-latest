@@ -1,7 +1,8 @@
 import { Minus, Plus } from "lucide-react";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const FAQCard = ({ question, answer, isOpen, onToggle, arr, index}) => {
+const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
     <div className={`${(arr.length - 1) != index && 'border-b'} border-gray-300 px-4 py-1 `}>
       <div
@@ -28,8 +29,8 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index}) => {
 
 const FAQSection = (props) => {
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate()
 
- 
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -46,9 +47,12 @@ const FAQSection = (props) => {
         </h2>
         <div className="w-14 h-2 bg-red-500 mb-6"></div>
         <p className="sub-description text-black">
-         Whether you’re planning a new build, custom furniture, or need reliable hardware and electrical goods — NobleCraft is ready to bring your vision to life with quality and expertise.
+          Whether you’re planning a new build, custom furniture, or need reliable hardware and electrical goods — NobleCraft is ready to bring your vision to life with quality and expertise.
         </p>
         <button
+          onClick={() => {
+            navigate("/contact-us")
+          }}
           className="white-red-button"
         >
           Get in Touch

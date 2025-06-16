@@ -11,6 +11,10 @@ import Hero from "../Section/Hero";
 import Image1 from "../assets/Hero/Image1.png";
 import Image2 from "../assets/Hero/Image2.png";
 import Image3 from "../assets/Hero/Image3.png";
+import Image4 from "../assets/Hero/Image4.png"
+import Image5 from "../assets/Hero/Image5.png"
+import Image6 from "../assets/Hero/Image6.png"
+import Image7 from "../assets/Hero/Image7.png"
 import FadeInSection from "../utils/FadeIn";
 import LatestProject from "../Section/LatestProject";
 import { useDispatch } from "react-redux";
@@ -46,22 +50,22 @@ const Home = () => {
              {
               heading: "Steel Iron",
               description: `Premium grade iron solutions`,
-              img: Image3,
+              img: Image4,
             },
              {
               heading: "Steel Iron Fabrication",
               description: `Tailored steel & iron fabrication`,
-              img: Image3,
+              img: Image5,
             },
             {
               heading: "Electrical Goods",
               description: `High Quality electrical essentials`,
-              img: Image3,
+              img: Image6,
             },
             {
               heading: "Building Hardware",
               description: `Strong hardware for any project`,
-              img: Image3,
+              img: Image7,
             }
 
           ]}

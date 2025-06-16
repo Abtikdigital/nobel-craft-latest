@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import Counter from "../Pages/Counter";
 import ServiceImage from "../assets/HomeService/Image1.jpeg";
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="w-full box-border  bg-white py-10 md:py-0 ">
       <div className="flex flex-col md:flex-row gap-7.5 ">
@@ -21,18 +23,29 @@ const ServicesSection = () => {
           <div className="flex flex-wrap gap-5">
             <div className="flex-1 min-w-[250px]">
               <p className="sub-description text-black mb-4">
-               At NobleCraft, every project matters. From large commercial sites to handcrafted steel furniture, we maintain the same high standards of quality and precision.
+                At NobleCraft, every project matters. From large commercial
+                sites to handcrafted steel furniture, we maintain the same high
+                standards of quality and precision.
               </p>
               <p className="sub-description text-black ">
-                Our services cover construction, steel and iron furniture, fabrication, electric goods, and building materials — tailored for builders, architects, and homeowners alike.
+                Our services cover construction, steel and iron furniture,
+                fabrication, electric goods, and building materials — tailored
+                for builders, architects, and homeowners alike.
               </p>
             </div>
             <div className="flex-1 min-w-[250px]">
               <p className="sub-description text-black mb-4">
-                With years of experience and a passion for excellence, NobleCraft ensures timely delivery, professional execution, and customer satisfaction in every project we undertake. No matter the size, your vision is our priority.
+                With years of experience and a passion for excellence,
+                NobleCraft ensures timely delivery, professional execution, and
+                customer satisfaction in every project we undertake. No matter
+                the size, your vision is our priority.
               </p>
+
               <button
                 className="white-red-button"
+                onClick={() => {
+                  navigate("/services");
+                }}
               >
                 Learn More
               </button>

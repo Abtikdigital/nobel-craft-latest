@@ -6,14 +6,22 @@ import Hero from "../Section/Hero";
 import Footer from "../Section/Footer";
 import FadeInSection from "../utils/FadeIn";
 import Image1 from "../assets/ContactUs/Hero.webp";
+import IconImage1 from "../assets/ContactUs/Icon1.png";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { addContact } from "../apis/contactApis";
-
+import IconImage2 from "../assets/ContactUs/phone-call.png";
+import IconImage3 from "../assets/ContactUs/email.png";
+import IconImage4 from "../assets/ContactUs/maps-and-flags.png";
+import { Facebook, Twitter, Instagram } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { FaWhatsapp } from "react-icons/fa";
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
     <div
-      className={`${arr.length - 1 !== index ? "border-b" : ""} border-gray-300 px-4 py-2`}
+      className={`${
+        arr.length - 1 !== index ? "border-b" : ""
+      } border-gray-300 px-4 py-2`}
     >
       <div
         className="cursor-pointer flex justify-between items-center text-lg font-semibold text-black py-4 "
@@ -21,16 +29,23 @@ const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
       >
         <span className="sub-heading3 text-left w-full">{question}</span>
         <span className="w-6 h-6 bg-[#FF1616] text-white flex items-center justify-center rounded-full ">
-          {isOpen ? <Minus className="w-8 h-8" /> : <Plus className="w-8 h-8" />}
+          {isOpen ? (
+            <Minus className="w-8 h-8" />
+          ) : (
+            <Plus className="w-8 h-8" />
+          )}
         </span>
       </div>
-      {isOpen && <p className="sub-description text-[#666666] pb-4">{answer}</p>}
+      {isOpen && (
+        <p className="sub-description text-[#666666] pb-4">{answer}</p>
+      )}
     </div>
   );
 };
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const disp = useDispatch();
 
   const {
     register,
@@ -93,6 +108,10 @@ const Contact = () => {
     }
   };
 
+  const handleOpenDialog = () => {
+    disp({ type: "open" });
+  };
+
   return (
     <>
       <Navbar />
@@ -105,8 +124,34 @@ const Contact = () => {
               heading: "Contact Us",
               description:
                 "Contact us for quick help with construction, fabrication, or material needs—fast, reliable, and expert support.",
-              img: Image1,
+              img: IconImage1,
             },
+          ]}
+          contactInfo={[
+            {
+              icon: IconImage2,
+              link: "+91 70854 87001",
+              href: "tel:+91 70854 87001",
+            },
+            {
+              icon: IconImage3,
+              link: "thutant518@gmail.com",
+              href: "mailto:thutant518@gmail.com",
+            },
+            {
+              icon: IconImage4,
+              link: `Address C/O Dorjee Wangmu 
+Khrimu, post office-kitpi, Tawang, Tawang, 
+Tawang, Arunachal Pradesh, India 
+Pin 790104.'`,
+              href: "mailto:test123@gmail.com",
+            },
+          ]}
+          socialLinks={[
+            { icons: FaWhatsapp, link: "", href: "https://api.whatsapp.com/send/?phone=917085487001&text&type=phone_number&app_absent=0" },
+            { icons: Instagram, link: "", href: "" },
+            { icons: Twitter, link: "", href: "" },
+            { icons: Facebook, link: "", href: "" },
 
           ]}
         />
@@ -115,13 +160,17 @@ const Contact = () => {
       <FadeInSection>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-white py-10 px-6 text-center">
           <div className="md:col-span-2 flex flex-col justify-center items-center">
-            <h3 className="sub-heading text-[#FF1616]">Call: +91 70854 87001</h3>
+            <h3 className="sub-heading text-[#FF1616]">
+              <a href="tel:+91 70854 87001">Call: +91 70854 87001</a>
+            </h3>
             <p className="sub-heading2 mt-2">
               We Can’t Wait to Make Your Ideas a Reality
             </p>
           </div>
           <div className="flex justify-center items-center">
-            <button className="white-red-button">GET A FREE QUOTE</button>
+            <button className="white-red-button" onClick={handleOpenDialog}>
+              GET A FREE QUOTE
+            </button>
           </div>
         </div>
       </FadeInSection>
@@ -130,17 +179,26 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:px-6 py-10">
           {/* Contact Form */}
           <div className="bg-[#F7F7F7] p-6">
-            <h2 className="sub-heading text-[#2A2A2A] text-left">Get In Touch</h2>
+            <h2 className="sub-heading text-[#2A2A2A] text-left">
+              Get In Touch
+            </h2>
             <div className="h-2 w-12 bg-[#FF1616] my-2"></div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 mt-4">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="flex flex-col gap-4 mt-4"
+            >
               <div>
                 <input
                   className="w-full bg-white border border-gray-300 py-2 px-4 rounded"
                   placeholder="Name"
                   {...register("name", { required: "* Name is required" })}
                 />
-                {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
+                {errors.name && (
+                  <p className="text-sm text-red-600 mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
               </div>
               <div>
                 <input
@@ -154,7 +212,11 @@ const Contact = () => {
                     },
                   })}
                 />
-                {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
+                {errors.email && (
+                  <p className="text-sm text-red-600 mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
               <div>
                 <textarea
@@ -163,7 +225,11 @@ const Contact = () => {
                   rows={5}
                   {...register("message")}
                 ></textarea>
-                {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
+                {errors.message && (
+                  <p className="text-sm text-red-600 mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex justify-end">
