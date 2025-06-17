@@ -43,7 +43,7 @@ Pin 790104.`,
       list: [
         { data: "Home", link: "/" },
         { data: "About Us", link: "/about-us" },
-        { data: "Contact", link: "/contact" },
+        { data: "Contact", link: "/contact-us" },
       ],
     },
     {

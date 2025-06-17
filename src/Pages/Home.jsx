@@ -18,12 +18,15 @@ import Image7 from "../assets/Hero/Image7.png"
 import FadeInSection from "../utils/FadeIn";
 import LatestProject from "../Section/LatestProject";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+const nav=useNavigate()
   const disp = useDispatch()
   const handleOpenDialog = () => {
     disp({ type: "open" })
   }
+  
   return (
     <>
       <Navbar />
@@ -116,7 +119,9 @@ const Home = () => {
             <h3 className="sub-description">
               At NobleCraft Construction Pvt. Ltd., we turn ideas into reality with strength, precision, and trust. Whether it’s large-scale construction, custom steel and iron furniture, or detailed fabrication work, every project reflects our unwavering commitment to quality, reliability, and craftsmanship.
             </h3>
-            <button className="white-red-button">About Us</button>
+            <button className="white-red-button" onClick={()=>{
+              nav("/about-us")
+            }}>About Us</button>
           </div>
           <div className="relative">
             <img src={AboutImage} alt="About Us " className="md:w-full md:h-full" />
