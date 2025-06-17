@@ -19,8 +19,9 @@ import SteelIronFabrication from "./Pages/SteelIronFabrication"
 import { useDispatch, useSelector } from "react-redux";
 import { X, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { addQuote } from "./api/quoteApis";
+// import { addQuote } from "./api/quoteApis";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const serviceOptions = [
   { label: "Construction", value: "construction" },
@@ -52,7 +53,7 @@ function App() {
 
   const onSubmit = async (data) => {
     try {
-      let res = await addQuote(data);
+      let res = await axios.post("/api/quoteApis",data);
       if (res?.status == 201) {
         Swal.fire({
           icon: "success",
