@@ -12,6 +12,7 @@ const {
   SMTP_PORT,
   SMTP_SECURE,
   SMTP_HOST_NAME,
+  HOST_NAME
 } = process.env;
 
 // -------------------------
@@ -155,7 +156,7 @@ export default async function handler(req, res) {
 
   try {
     await dbConnect();
-    const { name, email, number, serviceType, message } = req.body;
+    const { name, email, message } = req.body;
 
     const { error } = quoteValidationSchema.validate({
       name,
