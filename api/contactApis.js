@@ -127,7 +127,7 @@ const userTemplate = (heading, name) => {
 // -------------------------
 // EMAIL SENDER
 // -------------------------
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: SMTP_MAIL,
