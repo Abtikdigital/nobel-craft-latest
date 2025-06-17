@@ -11,13 +11,17 @@ import Hero from "../Section/Hero";
 import Image1 from "../assets/Hero/Image1.png";
 import Image2 from "../assets/Hero/Image2.png";
 import Image3 from "../assets/Hero/Image3.png";
+import Image4 from "../assets/Hero/Image4.png"
+import Image5 from "../assets/Hero/Image5.png"
+import Image6 from "../assets/Hero/Image6.png"
+import Image7 from "../assets/Hero/Image7.png"
 import FadeInSection from "../utils/FadeIn";
 import LatestProject from "../Section/LatestProject";
 import { useDispatch } from "react-redux";
 
 const Home = () => {
   const disp = useDispatch()
-  const handleOpen = () => {
+  const handleOpenDialog = () => {
     disp({ type: "open" })
   }
   return (
@@ -46,22 +50,22 @@ const Home = () => {
              {
               heading: "Steel Iron",
               description: `Premium grade iron solutions`,
-              img: Image3,
+              img: Image4,
             },
              {
               heading: "Steel Iron Fabrication",
               description: `Tailored steel & iron fabrication`,
-              img: Image3,
+              img: Image5,
             },
             {
               heading: "Electrical Goods",
               description: `High Quality electrical essentials`,
-              img: Image3,
+              img: Image6,
             },
             {
               heading: "Building Hardware",
               description: `Strong hardware for any project`,
-              img: Image3,
+              img: Image7,
             }
 
           ]}
@@ -125,9 +129,9 @@ const Home = () => {
                  +91 70854 87001
                 </a>
               </div>
-              <div className="border-b-1 border-black/25 px-6 md:pl-0 md:bg-white py-4  flex justify-start md:justify-end items-center">
-                <button className="white-red-button">
-                  ONLINE ESTIMATE FORM
+              <div className="border-b-1 border-black/25 px-6 md:px-0 md:pl-0 md:bg-white py-4  flex justify-start md:justify-center items-center">
+                <button className="white-red-button" onClick={handleOpenDialog}>
+                GET A  FREE QUOTE
                 </button>
               </div>
             </div>

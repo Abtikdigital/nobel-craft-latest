@@ -19,8 +19,9 @@ import SteelIronFabrication from "./Pages/SteelIronFabrication"
 import { useDispatch, useSelector } from "react-redux";
 import { X, Check } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { addQuote } from "./apis/quoteApis";
+// import { addQuote } from "./api/quoteApis";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const serviceOptions = [
   { label: "Construction", value: "construction" },
@@ -49,11 +50,10 @@ function App() {
     dispatch({ type: "close" });
     reset();
   };
-
   const onSubmit = async (data) => {
     try {
-      let res = await addQuote(data);
-      if (res?.status == 201) {
+      let res = await axios.post("/api/quoteApis", data);
+      if (res?.status === 201) {
         Swal.fire({
           icon: "success",
           title: "Submitted!",
@@ -62,16 +62,19 @@ function App() {
         });
       }
     } catch (error) {
+      const backendMessage =
+        error?.response?.data?.message || "Something went wrong. Please try again later.";
       Swal.fire({
         icon: "error",
         title: "Submission Failed",
-        text: "Something went wrong. Please try again later.",
+        text: backendMessage,
         confirmButtonColor: "#FF1616",
       });
     } finally {
       handleClose();
     }
   };
+
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -276,9 +279,8 @@ function CustomDropdown({ value, onChange, error }) {
                 onChange(option.value);
                 setIsOpen(false);
               }}
-              className={`px-4 py-2 flex justify-between items-center hover:bg-[#f2f7fe] cursor-pointer ${
-                value === option.value ? "bg-[#f2f7fe]" : ""
-              }`}
+              className={`px-4 py-2 flex justify-between items-center hover:bg-[#f2f7fe] cursor-pointer ${value === option.value ? "bg-[#f2f7fe]" : ""
+                }`}
             >
               <span>{option.label}</span>
               {value === option.value && (
