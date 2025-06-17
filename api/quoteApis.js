@@ -2,18 +2,10 @@ import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 import Joi from "joi";
 
-// -------------------------
-// ENV VARIABLES
-// -------------------------
-const {
-  MONGODB_URI,
-  SMTP_MAIL,
-  SMTP_PASS,
-} = process.env;
+// ENV
+const { MONGODB_URI, SMTP_MAIL, SMTP_PASS } = process.env;
 
-// -------------------------
-// MONGOOSE DB CONNECT
-// -------------------------
+// DB Connection
 let cached = global.mongoose;
 if (!cached) cached = global.mongoose = { conn: null, promise: null };
 
@@ -28,13 +20,11 @@ async function dbConnect() {
   return cached.conn;
 }
 
-// -------------------------
-// CONTACT SCHEMA
-// -------------------------
+// Schema
 const quoteSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true, trim: true, lowercase: true },
-    email: { type: String, required: true, trim: true, lowercase: true, unique: true },
+    name: { type: String, required: true, trim: true },
+    email: { type: String, required: true, trim: true, lowercase: true },
     number: { type: Number, required: true },
     serviceType: {
       type: String,
@@ -53,11 +43,9 @@ const quoteSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Quote= mongoose.models.Quote || mongoose.model("quoteSchema", quoteSchema);
+const Quote = mongoose.models.Quote || mongoose.model("Quote", quoteSchema);
 
-// -------------------------
-// VALIDATION SCHEMA
-// -------------------------
+// Joi Validation
 const quoteValidationSchema = Joi.object({
   name: Joi.string().min(2).max(50).required(),
   email: Joi.string().email().required(),
@@ -68,74 +56,66 @@ const quoteValidationSchema = Joi.object({
   message: Joi.string().allow("").optional(),
 });
 
-// -------------------------
-// EMAIL TEMPLATES
-// -------------------------
+// Email Templates
 const firmTemplate = (heading, tableData) => {
-  const tableRows = tableData
-    .map(item =>
-      !item?.value
-        ? ``
-        : `<tr>
-            <td style="padding: 8px; border: 1px solid #ddd;">${item.label}</td>
-            <td style="padding: 8px; border: 1px solid #ddd;">${item.value}</td>
-          </tr>`
-    )
+  const rows = tableData
+    .map(item => item.value ? `
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">${item.label}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${item.value}</td>
+      </tr>
+    ` : "")
     .join("");
 
   return `
     <html><body>
-    <div style="font-family: Arial, sans-serif; background: #fff; max-width: 600px; margin: auto;">
-      <div style="background-color: #1a1a1a; color: #fff; padding: 20px; text-align: center;">
-        <h1>NOBLECRAFT CONSTRUCTION</h1>
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+        <div style="background: #1a1a1a; color: #fff; padding: 20px; text-align: center;">
+          <h1>NOBLECRAFT CONSTRUCTION</h1>
+        </div>
+        <div style="background: #FF1616; color: #fff; padding: 15px; text-align: center;">
+          <h2>${heading}</h2>
+        </div>
+        <div style="padding: 20px;">
+          <p>Contact Details:</p>
+          <table style="width: 100%; border-collapse: collapse;">${rows}</table>
+        </div>
+        <footer style="padding: 15px; text-align: center; font-size: 13px; color: #555;">
+          <p><strong>NOBLECRAFT CONSTRUCTION</strong></p>
+          <p>📞 (346) 234-6973 | 📧 support@noblecraft.com</p>
+          <p>© ${new Date().getFullYear()} NOBLECRAFT. All rights reserved.</p>
+        </footer>
       </div>
-      <div style="background-color: #FF1616; color: #fff; padding: 15px; text-align: center;">
-        <h2>${heading}</h2>
-      </div>
-      <div style="padding: 20px;">
-        <p>Contact Details:</p>
-        <table style="width: 100%; border-collapse: collapse;">${tableRows}</table>
-      </div>
-      <footer style="padding: 15px; text-align: center; font-size: 13px; color: #555;">
-        <p><strong>NOBLECRAFT CONSTRUCTION</strong></p>
-        <p>📞 (346) 234-6973 | 📧 support@noblecraft.com</p>
-        <p>© ${new Date().getFullYear()} NOBLECRAFT. All rights reserved.</p>
-      </footer>
-    </div>
     </body></html>
   `;
 };
 
-const userTemplate = (heading, name) => {
-  return `
-    <html><body>
-    <div style="font-family: Arial, sans-serif; background: #fff; max-width: 600px; margin: auto;">
-      <div style="background-color: #1a1a1a; color: #fff; padding: 20px; text-align: center;">
+const userTemplate = (heading, name) => `
+  <html><body>
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto;">
+      <div style="background: #1a1a1a; color: #fff; padding: 20px; text-align: center;">
         <h1>NOBLECRAFT CONSTRUCTION</h1>
       </div>
-      <div style="background-color: #FF1616; color: #fff; padding: 15px; text-align: center;">
+      <div style="background: #FF1616; color: #fff; padding: 15px; text-align: center;">
         <h2>${heading}</h2>
       </div>
       <div style="padding: 20px;">
         <p>Dear <strong>${name}</strong>,</p>
-        <p>Thank you for reaching out to us. Our team will contact you shortly.</p>
+        <p>Thank you for reaching out. We’ll get back to you soon.</p>
         <p>📞 (346) 234-6973 | 📧 support@noblecraft.com</p>
-        <p>– The NobleCraft Team</p>
+        <p>– NobleCraft Team</p>
       </div>
       <footer style="padding: 15px; text-align: center; font-size: 13px; color: #555;">
         <p><strong>NOBLECRAFT CONSTRUCTION</strong></p>
         <p>© ${new Date().getFullYear()} NOBLECRAFT. All rights reserved.</p>
       </footer>
     </div>
-    </body></html>
-  `;
-};
+  </body></html>
+`;
 
-// -------------------------
-// EMAIL SENDER
-// -------------------------
+// Nodemailer Transport
 const transporter = nodemailer.createTransport({
-service:"gmail",
+  service: "gmail",
   auth: {
     user: SMTP_MAIL,
     pass: SMTP_PASS,
@@ -143,52 +123,50 @@ service:"gmail",
 });
 
 async function sendMail(from, to, subject, html) {
-  return transporter.sendMail({ from, to, subject, html });
+  try {
+    const result = await transporter.sendMail({
+      from,
+      to,
+      subject,
+      html,
+    });
+    console.log("Email sent:", result.messageId);
+  } catch (error) {
+    console.error("Error sending mail:", error);
+    throw new Error("Failed to send email");
+  }
 }
 
-// -------------------------
-// API HANDLER
-// -------------------------
+// API Handler
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ isSuccess: false, message: 'Method not allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ isSuccess: false, message: "Method not allowed" });
   }
 
   try {
     await dbConnect();
+
     const { name, email, number, serviceType, message } = req.body;
 
-    const { error } = quoteValidationSchema.validate({
-      name,
-      email,
-      number,
-      serviceType,
-      message,
-    });
+    const { error } = quoteValidationSchema.validate({ name, email, number, serviceType, message });
 
     if (error) {
-      return res.status(400).json({ isSuccess: false, message: "Invalid Data", error: error.details[0].message });
+      return res.status(400).json({
+        isSuccess: false,
+        message: "Invalid data",
+        error: error.details[0].message,
+      });
     }
 
-    const existing = await Quote.findOne({
-      $or: [{ email }, { number }],
-    });
+    // Save to DB
+    const quote = new Quote({ name, email, number, serviceType, message });
+    await quote.save();
 
-    if (existing) {
-      return res.status(400).json({ isSuccess: false, message: "Details Already Exist" });
-    }
+    res.status(201).json({ isSuccess: true, message: "Quote submitted successfully" });
 
-    const newQuote = new Quote({ name, email, number, serviceType, message });
-    await newQuote.save();
-
-    res.status(201).json({
-      isSuccess: true,
-      message: "Quote submitted successfully",
-    });
-
-    // Send emails in background
-    Promise.all([
-      sendMail(SMTP_MAIL, email, "Thank you for Contacting NobleCraft", userTemplate("Thank You for Reaching Out", name)),
+    // Send Emails
+    await Promise.all([
+      sendMail(SMTP_MAIL, email, "Thank you for contacting NobleCraft", userTemplate("Thank You", name)),
       sendMail(SMTP_MAIL, SMTP_MAIL, "New Quote Submission", firmTemplate("New Contact Received", [
         { label: "Name", value: name },
         { label: "Email", value: email },
@@ -196,10 +174,14 @@ export default async function handler(req, res) {
         { label: "Service Type", value: serviceType },
         { label: "Message", value: message || "No message" },
       ])),
-    ]).catch(console.error);
+    ]);
 
   } catch (err) {
-    console.error("Contact API error:", err);
-    res.status(500).json({ isSuccess: false, message: "Internal Server Error" });
+    console.error("API error:", err);
+    return res.status(500).json({
+      isSuccess: false,
+      message: "Internal Server Error",
+      error: err.message,
+    });
   }
 }
