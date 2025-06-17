@@ -16,8 +16,7 @@ const Footer = () => {
       list: [
         {
           data: `Address C/O Dorjee Wangmu 
-Khrimu, post office-kitpi, Tawang, Tawang, 
-Tawang, Arunachal Pradesh, India 
+Khrimu, post office-kitpi, Tawang, Arunachal Pradesh, India 
 Pin 790104.`,
           icon: MapPin,
         },
