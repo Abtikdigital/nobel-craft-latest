@@ -23,9 +23,11 @@ if (!cached) cached = global.mongoose = { conn: null, promise: null };
 async function dbConnect() {
   if (cached.conn) return cached.conn;
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
-      bufferCommands: false,
-    }).then((mongoose) => mongoose);
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        bufferCommands: false,
+      })
+      .then((mongoose) => mongoose);
   }
   cached.conn = await cached.promise;
   return cached.conn;
@@ -37,20 +39,14 @@ async function dbConnect() {
 const quoteSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true, lowercase: true },
-    email: { type: String, required: true, trim: true, lowercase: true, unique: true },
-    number: { type: Number, required: true },
-    serviceType: {
+    email: {
       type: String,
       required: true,
-      enum: [
-        "construction",
-        "building-hardware",
-        "electrical-goods",
-        "steel-furniture",
-        "teel-fabrication",
-        "other",
-      ],
+      trim: true,
+      lowercase: true,
+      unique: true,
     },
+
     message: { type: String },
   },
   { timestamps: true }
@@ -63,10 +59,7 @@ const Quote = mongoose.models.Quote || mongoose.model("Quote", quoteSchema);
 const quoteValidationSchema = Joi.object({
   name: Joi.string().min(2).max(50).required(),
   email: Joi.string().email().required(),
-  number: Joi.number().required(),
-  serviceType: Joi.string()
-    .valid("construction", "building-hardware", "electrical-goods", "steel-furniture", "teel-fabrication", "other")
-    .required(),
+
   message: Joi.string().allow("").optional(),
 });
 
@@ -75,11 +68,15 @@ const quoteValidationSchema = Joi.object({
 // -------------------------
 const firmTemplate = (heading, tableData) => {
   const tableRows = tableData
-    .map((item) => !item?.value ? `` : `
+    .map((item) =>
+      !item?.value
+        ? ``
+        : `
       <tr>
         <td style="padding: 8px; border: 1px solid #ddd;">${item.label}</td>
         <td style="padding: 8px; border: 1px solid #ddd;">${item.value}</td>
-      </tr>`)
+      </tr>`
+    )
     .join("");
 
   return `
@@ -136,7 +133,7 @@ const userTemplate = (heading, name) => {
 const transporter = nodemailer.createTransport({
   host: SMTP_HOST_NAME,
   port: Number(SMTP_PORT),
-  secure: SMTP_SECURE === 'true',
+  secure: SMTP_SECURE === "true",
   auth: {
     user: SMTP_MAIL,
     pass: SMTP_PASS,
@@ -151,8 +148,10 @@ async function sendMail(from, to, subject, html) {
 // API HANDLER
 // -------------------------
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ isSuccess: false, message: 'Method not allowed' });
+  if (req.method !== "POST") {
+    return res
+      .status(405)
+      .json({ isSuccess: false, message: "Method not allowed" });
   }
 
   try {
@@ -162,13 +161,18 @@ export default async function handler(req, res) {
     const { error } = quoteValidationSchema.validate({
       name,
       email,
-      number,
-      serviceType,
+
       message,
     });
 
     if (error) {
-      return res.status(400).json({ isSuccess: false, message: "Invalid Data", error: error.details[0].message });
+      return res
+        .status(400)
+        .json({
+          isSuccess: false,
+          message: "Invalid Data",
+          error: error.details[0].message,
+        });
     }
 
     const existing = await Quote.findOne({
@@ -176,10 +180,12 @@ export default async function handler(req, res) {
     });
 
     if (existing) {
-      return res.status(400).json({ isSuccess: false, message: "Details Already Exist" });
+      return res
+        .status(400)
+        .json({ isSuccess: false, message: "Details Already Exist" });
     }
 
-    const newQuote = new Quote({ name, email, number, serviceType, message });
+    const newQuote = new Quote({ name, email, message });
     await newQuote.save();
 
     res.status(201).json({
@@ -189,18 +195,28 @@ export default async function handler(req, res) {
 
     // Send email in background
     Promise.all([
-      sendMail(SMTP_MAIL, email, "Your Quote Request Has Been Received", userTemplate("Thank You for Reaching Out", name)),
-      sendMail(SMTP_MAIL, SMTP_MAIL, "New Quote Received", firmTemplate("New Quote Received", [
-        { label: "Name", value: name },
-        { label: "Email", value: email },
-        { label: "Number", value: number },
-        { label: "Service Type", value: serviceType },
-        { label: "Message", value: message || "No message" },
-      ])),
-    ]).catch(console.error);
+      sendMail(
+        SMTP_MAIL,
+        email,
+        "Your Quote Request Has Been Received",
+        userTemplate("Thank You for Reaching Out", name)
+      ),
+      sendMail(
+        SMTP_MAIL,
+        SMTP_MAIL,
+        "New Quote Received",
+        firmTemplate("New Quote Received", [
+          { label: "Name", value: name },
+          { label: "Email", value: email },
 
+          { label: "Message", value: message || "No message" },
+        ])
+      ),
+    ]).catch(console.error);
   } catch (err) {
     console.error("Quote API error:", err);
-    res.status(500).json({ isSuccess: false, message: "Internal Server Error" });
+    res
+      .status(500)
+      .json({ isSuccess: false, message: "Internal Server Error" });
   }
 }
