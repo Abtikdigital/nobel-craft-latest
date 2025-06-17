@@ -9,13 +9,14 @@ import Image1 from "../assets/ContactUs/Hero.webp";
 import IconImage1 from "../assets/ContactUs/Icon1.png";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-
+// import { addContact } from "../api/contactApis";
 import IconImage2 from "../assets/ContactUs/phone-call.png";
 import IconImage3 from "../assets/ContactUs/email.png";
 import IconImage4 from "../assets/ContactUs/maps-and-flags.png";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { FaWhatsapp } from "react-icons/fa";
+import axios from "axios";
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
     <div
@@ -86,37 +87,27 @@ const Contact = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-const onSubmit = async (data) => {
-  try {
-    const res = await axios.post("/api/contactApis", data);
-
-    if (res?.data?.isSuccess) {
-      Swal.fire({
-        icon: "success",
-        title: "Message Sent!",
-        text: "Thank you for contacting us.",
-        confirmButtonColor: "#FF1616",
-      });
-      reset();
-    } else {
+  const onSubmit = async (data) => {
+    try {
+      const res = await axios.post("/api/contactApis",data);
+      if (res?.status === 201) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for contacting us.",
+          confirmButtonColor: "#FF1616",
+        });
+        reset();
+      }
+    } catch (err) {
       Swal.fire({
         icon: "error",
-        title: "Oops!",
-        text: res?.data?.message || "Something went wrong.",
+        title: "Error",
+        text: "Something went wrong. Please try again.",
         confirmButtonColor: "#FF1616",
       });
     }
-  } catch (err) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Something went wrong. Please try again.",
-      confirmButtonColor: "#FF1616",
-    });
-    console.error("Submit Error:", err);
-  }
-};
-
+  };
 
   const handleOpenDialog = () => {
     disp({ type: "open" });

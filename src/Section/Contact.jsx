@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Image1 from "../assets/Contact/image1.png";
-
+import axios from "axios";
+// import { addContact } from "../apis/contactApis"; // Adjust import path if needed
 
 const Contact = () => {
   const {
@@ -13,8 +14,8 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await handler(data);
-      if (res?.data?.isSuccess) {
+      const res = await axios.post("/api/contactApis",data);
+      if (res?.status === 201) {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",
@@ -22,13 +23,6 @@ const Contact = () => {
           confirmButtonColor: "#FF1616",
         });
         reset();
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops!",
-          text: res?.data?.message || "Something went wrong.",
-          confirmButtonColor: "#FF1616",
-        });
       }
     } catch (err) {
       Swal.fire({
@@ -37,7 +31,6 @@ const Contact = () => {
         text: "Something went wrong. Please try again.",
         confirmButtonColor: "#FF1616",
       });
-      console.error("Submit Error:", err);
     }
   };
 
