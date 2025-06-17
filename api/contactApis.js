@@ -131,9 +131,8 @@ const userTemplate = (heading, name) => {
 // EMAIL SENDER
 // -------------------------
 const transporter = nodemailer.createTransport({
-  host: SMTP_HOST_NAME,
-  port: Number(SMTP_PORT),
-  secure: SMTP_SECURE === "true",
+  service: HOST_NAME,
+
   auth: {
     user: SMTP_MAIL,
     pass: SMTP_PASS,
