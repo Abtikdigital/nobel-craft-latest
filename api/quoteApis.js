@@ -117,8 +117,8 @@ const userTemplate = (heading, name) => `
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "devishaabtikservices@gmail.com",
-    pass:"vgpn vktu nsak fgua",
+    user: SMTP_MAIL,
+    pass: SMTP_PASS,
   },
 });
 

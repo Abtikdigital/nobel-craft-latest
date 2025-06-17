@@ -8,8 +8,13 @@ import Joi from "joi";
 const {
   MONGODB_URI,
   SMTP_MAIL,
-  SMTP_PASS
+  SMTP_PASS,
 } = process.env;
+
+// Validate required environment variables
+if (!MONGODB_URI || !SMTP_MAIL || !SMTP_PASS) {
+  console.error("Missing required environment variables: MONGODB_URI, SMTP_MAIL, SMTP_PASS");
+}
 
 // -------------------------
 // MONGOOSE DB CONNECT
@@ -122,16 +127,42 @@ const userTemplate = (heading, name) => {
 // -------------------------
 // EMAIL SENDER
 // -------------------------
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransporter({
   service: "gmail",
   auth: {
     user: SMTP_MAIL,
     pass: SMTP_PASS,
   },
+  // Add these for better reliability
+  pool: true,
+  maxConnections: 1,
+  rateDelta: 20000,
+  rateLimit: 5,
+});
+
+// Verify transporter configuration
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("SMTP configuration error:", error);
+  } else {
+    console.log("SMTP server is ready to take our messages");
+  }
 });
 
 async function sendMail(from, to, subject, html) {
-  return transporter.sendMail({ from, to, subject, html });
+  try {
+    const result = await transporter.sendMail({ 
+      from, 
+      to, 
+      subject, 
+      html 
+    });
+    console.log("Email sent successfully:", result.messageId);
+    return result;
+  } catch (error) {
+    console.error("Email sending failed:", error);
+    throw error;
+  }
 }
 
 // -------------------------
@@ -146,8 +177,8 @@ export default async function handler(req, res) {
     await dbConnect();
     const { name, email, message } = req.body;
 
+    // Validate input
     const { error } = contactValidationSchema.validate({ name, email, message });
-
     if (error) {
       return res.status(400).json({
         isSuccess: false,
@@ -156,35 +187,79 @@ export default async function handler(req, res) {
       });
     }
 
+    // Check if SMTP credentials are available
+    if (!SMTP_MAIL || !SMTP_PASS) {
+      console.error("SMTP credentials missing");
+      return res.status(500).json({
+        isSuccess: false,
+        message: "Email configuration error"
+      });
+    }
+
+    // Save contact to database
     const newContact = new Contact({ name, email, message });
     await newContact.save();
 
-    res.status(201).json({
-      isSuccess: true,
-      message: "Contact submitted successfully",
-    });
+    // CRITICAL: Send emails BEFORE response in serverless environment
+    let emailStatus = "pending";
+    try {
+      console.log("Attempting to send emails...");
+      
+      const emailPromises = [
+        sendMail(
+          SMTP_MAIL,
+          email,
+          "We've received your message",
+          userTemplate("Thank You for Contacting Us", name)
+        ),
+        sendMail(
+          SMTP_MAIL,
+          SMTP_MAIL,
+          "New Contact Message",
+          firmTemplate("New Contact Form Submission", [
+            { label: "Name", value: name },
+            { label: "Email", value: email },
+            { label: "Message", value: message || "No message" },
+          ])
+        ),
+      ];
 
-    // Send email in background
-    Promise.all([
-      sendMail(
-        SMTP_MAIL,
-        email,
-        "We've received your message",
-        userTemplate("Thank You for Contacting Us", name)
-      ),
-      sendMail(
-        SMTP_MAIL,
-        SMTP_MAIL,
-        "New Contact Message",
-        firmTemplate("New Contact Form Submission", [
-          { label: "Name", value: name },
-          { label: "Email", value: email },
-          { label: "Message", value: message || "No message" },
-        ])
-      ),
-    ]).catch(console.error);
+      // Wait for emails to send (with timeout for serverless)
+      await Promise.race([
+        Promise.all(emailPromises),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Email timeout")), 8000) // 8 second timeout
+        )
+      ]);
+
+      emailStatus = "sent";
+      console.log("Emails sent successfully");
+
+    } catch (emailError) {
+      console.error("Email sending failed:", emailError.message);
+      emailStatus = "failed";
+    }
+
+    // Send response based on email status
+    if (emailStatus === "sent") {
+      res.status(201).json({
+        isSuccess: true,
+        message: "Contact submitted successfully and emails sent",
+      });
+    } else {
+      res.status(201).json({
+        isSuccess: true,
+        message: "Contact submitted successfully, but email delivery failed",
+        emailStatus: emailStatus
+      });
+    }
+
   } catch (err) {
     console.error("Contact API error:", err);
-    res.status(500).json({ isSuccess: false, message: "Internal Server Error" });
+    res.status(500).json({ 
+      isSuccess: false, 
+      message: "Internal Server Error",
+      error: process.env.NODE_ENV === 'development' ? err.message : undefined
+    });
   }
 }
