@@ -9,9 +9,6 @@ const {
   MONGODB_URI,
   SMTP_MAIL,
   SMTP_PASS,
-  SMTP_PORT,
-  SMTP_SECURE,
-  SMTP_HOST_NAME,
   HOST_NAME
 } = process.env;
 
@@ -132,7 +129,7 @@ const userTemplate = (heading, name) => {
 // EMAIL SENDER
 // -------------------------
 const transporter = nodemailer.createTransport({
-  service: HOST_NAME,
+  service: "gmail",
 
   auth: {
     user: SMTP_MAIL,
