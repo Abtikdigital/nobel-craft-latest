@@ -31,7 +31,7 @@ async function dbConnect() {
 // -------------------------
 // CONTACT SCHEMA
 // -------------------------
-const contactSchema = new mongoose.Schema(
+const quoteSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true, lowercase: true },
     email: { type: String, required: true, trim: true, lowercase: true, unique: true },
@@ -53,12 +53,12 @@ const contactSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Contact = mongoose.models.Contact || mongoose.model("Contact", contactSchema);
+const Quote= mongoose.models.Quote || mongoose.model("quoteSchema", quoteSchema);
 
 // -------------------------
 // VALIDATION SCHEMA
 // -------------------------
-const contactValidationSchema = Joi.object({
+const quoteValidationSchema = Joi.object({
   name: Joi.string().min(2).max(50).required(),
   email: Joi.string().email().required(),
   number: Joi.number().required(),
@@ -158,7 +158,7 @@ export default async function handler(req, res) {
     await dbConnect();
     const { name, email, number, serviceType, message } = req.body;
 
-    const { error } = contactValidationSchema.validate({
+    const { error } = quoteValidationSchema.validate({
       name,
       email,
       number,
@@ -170,7 +170,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ isSuccess: false, message: "Invalid Data", error: error.details[0].message });
     }
 
-    const existing = await Contact.findOne({
+    const existing = await Quote.findOne({
       $or: [{ email }, { number }],
     });
 
@@ -178,18 +178,18 @@ export default async function handler(req, res) {
       return res.status(400).json({ isSuccess: false, message: "Details Already Exist" });
     }
 
-    const newContact = new Contact({ name, email, number, serviceType, message });
-    await newContact.save();
+    const newQuote = new Quote({ name, email, number, serviceType, message });
+    await newQuote.save();
 
     res.status(201).json({
       isSuccess: true,
-      message: "Contact submitted successfully",
+      message: "Quote submitted successfully",
     });
 
     // Send emails in background
     Promise.all([
-      sendMail(SMTP_MAIL, email, "Thank you for contacting NobleCraft", userTemplate("Thank You for Reaching Out", name)),
-      sendMail(SMTP_MAIL, SMTP_MAIL, "New Contact Submission", firmTemplate("New Contact Received", [
+      sendMail(SMTP_MAIL, email, "Thank you for Contacting NobleCraft", userTemplate("Thank You for Reaching Out", name)),
+      sendMail(SMTP_MAIL, SMTP_MAIL, "New Quote Submission", firmTemplate("New Contact Received", [
         { label: "Name", value: name },
         { label: "Email", value: email },
         { label: "Number", value: number },
