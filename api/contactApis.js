@@ -176,7 +176,7 @@ export default async function handler(req, res) {
     }
 
     const existing = await Quote.findOne({
-      $or: [{ email }, { number }],
+      $or: [{ email }],
     });
 
     if (existing) {
