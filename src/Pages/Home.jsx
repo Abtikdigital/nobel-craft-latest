@@ -21,7 +21,7 @@ import { useDispatch } from "react-redux";
 
 const Home = () => {
   const disp = useDispatch()
-  const handleOpen = () => {
+  const handleOpenDialog = () => {
     disp({ type: "open" })
   }
   return (
@@ -130,7 +130,7 @@ const Home = () => {
                 </a>
               </div>
               <div className="border-b-1 border-black/25 px-6 md:px-0 md:pl-0 md:bg-white py-4  flex justify-start md:justify-center items-center">
-                <button className="white-red-button">
+                <button className="white-red-button" onClick={handleOpenDialog}>
                 GET A  FREE QUOTE
                 </button>
               </div>

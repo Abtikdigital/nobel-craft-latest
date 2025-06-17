@@ -50,11 +50,10 @@ function App() {
     dispatch({ type: "close" });
     reset();
   };
-
   const onSubmit = async (data) => {
     try {
-      let res = await axios.post("/api/quoteApis",data);
-      if (res?.status == 201) {
+      let res = await axios.post("/api/quoteApis", data);
+      if (res?.status === 201) {
         Swal.fire({
           icon: "success",
           title: "Submitted!",
@@ -63,16 +62,19 @@ function App() {
         });
       }
     } catch (error) {
+      const backendMessage =
+        error?.response?.data?.message || "Something went wrong. Please try again later.";
       Swal.fire({
         icon: "error",
         title: "Submission Failed",
-        text: "Something went wrong. Please try again later.",
+        text: backendMessage,
         confirmButtonColor: "#FF1616",
       });
     } finally {
       handleClose();
     }
   };
+
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -277,9 +279,8 @@ function CustomDropdown({ value, onChange, error }) {
                 onChange(option.value);
                 setIsOpen(false);
               }}
-              className={`px-4 py-2 flex justify-between items-center hover:bg-[#f2f7fe] cursor-pointer ${
-                value === option.value ? "bg-[#f2f7fe]" : ""
-              }`}
+              className={`px-4 py-2 flex justify-between items-center hover:bg-[#f2f7fe] cursor-pointer ${value === option.value ? "bg-[#f2f7fe]" : ""
+                }`}
             >
               <span>{option.label}</span>
               {value === option.value && (

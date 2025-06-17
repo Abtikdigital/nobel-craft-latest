@@ -20,9 +20,8 @@ import axios from "axios";
 const FAQCard = ({ question, answer, isOpen, onToggle, arr, index }) => {
   return (
     <div
-      className={`${
-        arr.length - 1 !== index ? "border-b" : ""
-      } border-gray-300 px-4 py-2`}
+      className={`${arr.length - 1 !== index ? "border-b" : ""
+        } border-gray-300 px-4 py-2`}
     >
       <div
         className="cursor-pointer flex justify-between items-center text-lg font-semibold text-black py-4 "
@@ -86,28 +85,29 @@ const Contact = () => {
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   const onSubmit = async (data) => {
-    try {
-      const res = await axios.post("/api/contactApis",data);
-      if (res?.status === 201) {
-        Swal.fire({
-          icon: "success",
-          title: "Message Sent!",
-          text: "Thank you for contacting us.",
-          confirmButtonColor: "#FF1616",
-        });
-        reset();
-      }
-    } catch (err) {
+  try {
+    const res = await axios.post("/api/contactApis", data);
+    if (res?.status === 201) {
       Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Something went wrong. Please try again.",
+        icon: "success",
+        title: "Message Sent!",
+        text: "Thank you for contacting us.",
         confirmButtonColor: "#FF1616",
       });
+      reset();
     }
-  };
+  } catch (err) {
+    const backendMessage = err?.response?.data?.message || "Something went wrong. Please try again.";
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: backendMessage,
+      confirmButtonColor: "#FF1616",
+    });
+  }
+};
+
 
   const handleOpenDialog = () => {
     disp({ type: "open" });

@@ -8,8 +8,7 @@ import Joi from "joi";
 const {
   MONGODB_URI,
   SMTP_MAIL,
-  SMTP_PASS,
-  HOST_NAME
+  SMTP_PASS
 } = process.env;
 
 // -------------------------
@@ -22,9 +21,7 @@ async function dbConnect() {
   if (cached.conn) return cached.conn;
   if (!cached.promise) {
     cached.promise = mongoose
-      .connect(MONGODB_URI, {
-        bufferCommands: false,
-      })
+      .connect(MONGODB_URI, { bufferCommands: false })
       .then((mongoose) => mongoose);
   }
   cached.conn = await cached.promise;
@@ -32,9 +29,9 @@ async function dbConnect() {
 }
 
 // -------------------------
-// QUOTE SCHEMA
+// CONTACT SCHEMA
 // -------------------------
-const quoteSchema = new mongoose.Schema(
+const contactSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true, lowercase: true },
     email: {
@@ -42,22 +39,19 @@ const quoteSchema = new mongoose.Schema(
       required: true,
       trim: true,
       lowercase: true,
-      unique: true,
     },
-
     message: { type: String },
   },
   { timestamps: true }
 );
-const Quote = mongoose.models.Quote || mongoose.model("Quote", quoteSchema);
+const Contact = mongoose.models.Contact || mongoose.model("Contact", contactSchema);
 
 // -------------------------
 // VALIDATION SCHEMA
 // -------------------------
-const quoteValidationSchema = Joi.object({
+const contactValidationSchema = Joi.object({
   name: Joi.string().min(2).max(50).required(),
   email: Joi.string().email().required(),
-
   message: Joi.string().allow("").optional(),
 });
 
@@ -87,7 +81,7 @@ const firmTemplate = (heading, tableData) => {
         <h2>${heading}</h2>
       </div>
       <div style="padding: 20px;">
-        <p>Quote Details:</p>
+        <p>Contact Details:</p>
         <table style="width: 100%; border-collapse: collapse;">${tableRows}</table>
       </div>
       <footer style="padding: 15px; text-align: center; font-size: 13px; color: #555;">
@@ -112,7 +106,7 @@ const userTemplate = (heading, name) => {
       </div>
       <div style="padding: 20px;">
         <p>Dear <strong>${name}</strong>,</p>
-        <p>Thank you for requesting a quote. Our team will contact you shortly.</p>
+        <p>Thank you for contacting us. Our team will reach out to you shortly.</p>
         <p>📞 (346) 234-6973 | 📧 support@noblecraft.com</p>
         <p>– The NobleCraft Team</p>
       </div>
@@ -130,7 +124,6 @@ const userTemplate = (heading, name) => {
 // -------------------------
 const transporter = nodemailer.createTransport({
   service: "gmail",
-
   auth: {
     user: SMTP_MAIL,
     pass: SMTP_PASS,
@@ -146,48 +139,29 @@ async function sendMail(from, to, subject, html) {
 // -------------------------
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res
-      .status(405)
-      .json({ isSuccess: false, message: "Method not allowed" });
+    return res.status(405).json({ isSuccess: false, message: "Method not allowed" });
   }
 
   try {
     await dbConnect();
     const { name, email, message } = req.body;
 
-    const { error } = quoteValidationSchema.validate({
-      name,
-      email,
-
-      message,
-    });
+    const { error } = contactValidationSchema.validate({ name, email, message });
 
     if (error) {
-      return res
-        .status(400)
-        .json({
-          isSuccess: false,
-          message: "Invalid Data",
-          error: error.details[0].message,
-        });
+      return res.status(400).json({
+        isSuccess: false,
+        message: "Invalid Data",
+        error: error.details[0].message,
+      });
     }
 
-    const existing = await Quote.findOne({
-      $or: [{ email }],
-    });
-
-    if (existing) {
-      return res
-        .status(400)
-        .json({ isSuccess: false, message: "Details Already Exist" });
-    }
-
-    const newQuote = new Quote({ name, email, message });
-    await newQuote.save();
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
 
     res.status(201).json({
       isSuccess: true,
-      message: "Quote submitted successfully",
+      message: "Contact submitted successfully",
     });
 
     // Send email in background
@@ -195,25 +169,22 @@ export default async function handler(req, res) {
       sendMail(
         SMTP_MAIL,
         email,
-        "Your Quote Request Has Been Received",
-        userTemplate("Thank You for Reaching Out", name)
+        "We've received your message",
+        userTemplate("Thank You for Contacting Us", name)
       ),
       sendMail(
         SMTP_MAIL,
         SMTP_MAIL,
-        "New Quote Received",
-        firmTemplate("New Quote Received", [
+        "New Contact Message",
+        firmTemplate("New Contact Form Submission", [
           { label: "Name", value: name },
           { label: "Email", value: email },
-
           { label: "Message", value: message || "No message" },
         ])
       ),
     ]).catch(console.error);
   } catch (err) {
-    console.error("Quote API error:", err);
-    res
-      .status(500)
-      .json({ isSuccess: false, message: "Internal Server Error" });
+    console.error("Contact API error:", err);
+    res.status(500).json({ isSuccess: false, message: "Internal Server Error" });
   }
 }
